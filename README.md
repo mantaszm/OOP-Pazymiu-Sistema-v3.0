@@ -1,135 +1,81 @@
-# Vector konteinerio projektas (STL imitacija)
+# Vector vs std::vector spartos ir atminties perskirstymo analizė
 
-## 1. Projekto aprašymas
+## Tikslas
 
-Šiame projekte realizuota nuosava `Vector<T>` klasė, imituojanti `std::vector` funkcionalumą.  
-Konteineris palaiko dinaminę atmintį, `push_back`, `insert`, `erase`, iteraciją, copy ir move semantiką.
+Šioje dalyje buvo palyginta mano sukurta `Vector` klasė su `std::vector`, įvertinant:
 
-Taip pat atliktas palyginimas su `std::vector` pagal veikimo greitį.
-
----
-
-## 2. Realizuotos pagrindinės funkcijos (STL analogai)
-
-### push_back
-Prideda elementą į vektoriaus galą.
-
-v.push_back(10);
+- `push_back()` vykdymo laiką
+- atminties perskirstymų skaičių
+- bendrą elgesio panašumą
 
 ---
 
-### insert
-Įterpia elementą į nurodytą vietą.
+## Testavimo metodas
 
-v.insert(1, 99);
+Buvo matuojama, kiek laiko užtrunka užpildyti konteinerius naudojant `push_back()` funkciją.
 
----
+Testuoti dydžiai:
+- 10 000
+- 100 000
+- 1 000 000
+- 10 000 000
+- 100 000 000
 
-### erase
-Pašalina elementą pagal indeksą.
+Kiekvienam dydžiui palyginti:
+- `std::vector`
+- `Vector`
 
-v.erase(0);
-
----
-
-### reserve
-Padidina talpą iš anksto.
-
-v.reserve(1000);
+Taip pat skaičiuoti atminties perskirstymai.
 
 ---
 
-### operator[]
-Prieiga prie elemento.
-
-int x = v[0];
-
----
-
-### Papildomai realizuota:
-- copy constructor
-- copy assignment
-- move constructor
-- move assignment
-- begin(), end()
-- size(), capacity()
-- shrink_to_fit()
-- clear()
-
----
-
-## 3. Testų paleidimas
-
-Testai paleidžiami per funkciją:
-
-int main() {
-    testClass();
-}
-
-Jei gaunama klaida:
-undefined reference to testClass()
-
-reiškia, kad reikia į kompiliaciją įtraukti .cpp failą:
-
-g++ main.cpp funkcijos.cpp -o app
-
----
-
-## 4. Spartos analizė (push_back)
-
-Rezultatai:
+## Rezultatai (push_back)
 
 SIZE = 10000  
 std::vector: 9.2e-05 s  
-Vector:       6.3e-05 s  
+Vector: 6.3e-05 s  
 
 SIZE = 100000  
 std::vector: 0.00066 s  
-Vector:       0.00056 s  
+Vector: 0.00056 s  
 
 SIZE = 1000000  
 std::vector: 0.003499 s  
-Vector:       0.003694 s  
+Vector: 0.003694 s  
 
 SIZE = 10000000  
 std::vector: 0.035827 s  
-Vector:       0.03508 s  
+Vector: 0.03508 s  
 
 SIZE = 100000000  
 std::vector: 0.270734 s  
-Vector:       0.316023 s  
+Vector: 0.316023 s  
 
 ---
 
-## 5. Analizė
+## Atminties perskirstymai
 
-- Mažiems dydžiams Vector kartais greitesnis dėl paprastesnės implementacijos
-- Dideliems dydžiams std::vector dažniausiai efektyvesnis
-
----
-
-## 6. Testuotos funkcijos
-
-- push_back
-- insert
-- erase
-- copy/move
-- file read/write
-- studentų apdorojimas
+std::vector reallocations: 28  
+Vector reallocations: 28  
 
 ---
 
-## 7. Išvada
+## Analizė
 
-Sukurta Vector<T> klasė:
-- atitinka ~80–90% std::vector funkcionalumo
-- palaiko move semantics
-- veikia su realiais duomenimis
-- leidžia atlikti performance analizę
+Abi implementacijos naudoja panašią `capacity` didinimo strategiją (apie 2x didinimą), todėl:
+
+- perskirstymų skaičius yra identiškas
+- augimas vyksta logaritmiškai
+
+Tai rodo, kad `Vector` elgiasi labai panašiai kaip `std::vector` atminties valdymo prasme.
 
 ---
 
-## 8. Paleidimas
+## Išvada
 
-g++ main.cpp funkcijos.cpp -O2 -o app
-./app
+- `Vector` ir `std::vector` turi beveik identišką `push_back` spartą
+- mažiems ir vidutiniams dydžiams skirtumai minimalūs
+- dideliems dydžiams `std::vector` turi nedidelį pranašumą
+- perskirstymų skaičius identiškas (28)
+
+Bendra išvada: sukurta `Vector` klasė yra artima `std::vector` realizacijai tiek funkcionalumo, tiek našumo prasme.
