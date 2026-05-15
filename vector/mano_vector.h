@@ -29,6 +29,9 @@ private:
     }
 
 public:
+    using iterator = T*;
+    using const_iterator = const T*;
+
     // Constructors / Destructor
     Vector()
         : data_(nullptr), size_(0), capacity_(0), reallocations_(0) {}
@@ -177,6 +180,33 @@ public:
         --size_;
     }
 
+    iterator erase(iterator first, iterator last) {
+        size_t start = first - begin();
+        size_t endPos = last - begin();
+
+        size_t newSize = size_ - (endPos - start);
+
+        for (size_t i = start; i < newSize; ++i) {
+            data_[i] = std::move(data_[i + (endPos - start)]);
+        }
+
+        size_ = newSize;
+
+        return begin() + start;
+    }
+
+    iterator erase(iterator it) {
+    size_t index = it - data_;
+
+    for (size_t i = index; i < size_ - 1; ++i) {
+        data_[i] = std::move(data_[i + 1]);
+    }
+
+    --size_;
+
+    return data_ + index;
+}
+
     void insert(size_t index, const T& value) {
         if (index > size_) return;
 
@@ -193,11 +223,11 @@ public:
     }
 
     // Iterators
-    T* begin() { return data_; }
-    T* end() { return data_ + size_; }
+    iterator begin() { return data_; }
+    iterator end() { return data_ + size_; }
 
-    const T* begin() const { return data_; }
-    const T* end() const { return data_ + size_; }
+    const_iterator begin() const { return data_; }
+    const_iterator end() const { return data_ + size_; }
 
     // Operators
     bool operator==(const Vector& other) const {
