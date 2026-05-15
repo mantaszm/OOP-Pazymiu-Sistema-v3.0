@@ -1,81 +1,123 @@
-# Vector vs std::vector spartos ir atminties perskirstymo analizė
+# OOP Pazymiu Sistema v1.5 + My Vector realizacija
 
-## Tikslas
+## Projekto aprašymas
 
-Šioje dalyje buvo palyginta mano sukurta `Vector` klasė su `std::vector`, įvertinant:
-
-- `push_back()` vykdymo laiką
-- atminties perskirstymų skaičių
-- bendrą elgesio panašumą
-
----
-
-## Testavimo metodas
-
-Buvo matuojama, kiek laiko užtrunka užpildyti konteinerius naudojant `push_back()` funkciją.
-
-Testuoti dydžiai:
-- 10 000
-- 100 000
-- 1 000 000
-- 10 000 000
-- 100 000 000
-
-Kiekvienam dydžiui palyginti:
-- `std::vector`
-- `Vector`
-
-Taip pat skaičiuoti atminties perskirstymai.
+Ši programa yra studentų pažymių valdymo sistema, kurioje realizuota:
+- std::vector konteineris
+- custom Vector (My Vector)
+- jų palyginimas pagal:
+  - push_back spartą
+  - atminties perskirstymus (reallocations)
+  - failų skaitymą
+  - studentų dalinimo algoritmus
 
 ---
 
-## Rezultatai (push_back)
+## ⚙️ Funkcionalumas
 
-SIZE = 10000  
-std::vector: 9.2e-05 s  
-Vector: 6.3e-05 s  
-
-SIZE = 100000  
-std::vector: 0.00066 s  
-Vector: 0.00056 s  
-
-SIZE = 1000000  
-std::vector: 0.003499 s  
-Vector: 0.003694 s  
-
-SIZE = 10000000  
-std::vector: 0.035827 s  
-Vector: 0.03508 s  
-
-SIZE = 100000000  
-std::vector: 0.270734 s  
-Vector: 0.316023 s  
+Programa leidžia:
+- Įvesti studentus terminale
+- Nuskaityti iš failo
+- Generuoti testinius failus
+- Padalinti studentus į grupes (vargsiukai / kietiakai)
+- Testuoti 3 split strategijas
+- Lyginti std::vector ir My Vector
+- Matuoti push_back ir reallocations
 
 ---
 
-## Atminties perskirstymai
+## VECTOR 3 STRATEGIJOS REZULTATAI
 
-std::vector reallocations: 28  
-Vector reallocations: 28  
+### 100 000 studentų
 
----
-
-## Analizė
-
-Abi implementacijos naudoja panašią `capacity` didinimo strategiją (apie 2x didinimą), todėl:
-
-- perskirstymų skaičius yra identiškas
-- augimas vyksta logaritmiškai
-
-Tai rodo, kad `Vector` elgiasi labai panašiai kaip `std::vector` atminties valdymo prasme.
+| Konteineris | Dalinimo laikas | Read laikas |
+|------------|----------------|-------------|
+| std::vector | 0.023389 s | 0.386926 s |
+| My Vector   | 0.028158 s | 0.354138 s |
 
 ---
 
-## Išvada
+### 1 000 000 studentų
 
-- `Vector` ir `std::vector` turi beveik identišką `push_back` spartą
-- mažiems ir vidutiniams dydžiams skirtumai minimalūs
-- dideliems dydžiams `std::vector` turi nedidelį pranašumą
-- perskirstymų skaičius identiškas (28)
+| Konteineris | Dalinimo laikas | Read laikas |
+|------------|----------------|-------------|
+| std::vector | 0.214749 s | 3.78705 s |
+| My Vector   | 0.251329 s | 3.48407 s |
 
-Bendra išvada: sukurta `Vector` klasė yra artima `std::vector` realizacijai tiek funkcionalumo, tiek našumo prasme.
+---
+
+### 10 000 000 studentų
+
+| Konteineris | Dalinimo laikas | Read laikas |
+|------------|----------------|-------------|
+| std::vector | 2.51136 s | 82.1892 s |
+| My Vector   | 3.48541 s | 80.6484 s |
+
+---
+
+## PUSH_BACK SPARTA (VEKTORIAUS PILDYMAS)
+
+Buvo atliktas testas, kai į tuščią konteinerį dedami elementai naudojant `push_back()`.
+
+### Rezultatai
+
+| Elementų kiekis | std::vector | My Vector |
+|----------------|-------------|-----------|
+| 10 000 | labai greita (~0.0001 s) | labai greita (~0.0001 s) |
+| 100 000 | ~0.0006 s | ~0.0005 s |
+| 1 000 000 | ~0.003–0.004 s | ~0.003–0.004 s |
+| 10 000 000 | ~0.03–0.04 s | ~0.03–0.04 s |
+| 100 000 000 | ~0.2–0.3 s | ~0.3 s |
+
+---
+
+## RELOKACIJOS (100M elementų)
+
+| Konteineris | Reallocations |
+|------------|--------------|
+| std::vector | 28 |
+| My Vector   | 28 |
+
+---
+
+## IŠVADOS
+
+- std::vector yra šiek tiek greitesnis split operacijose
+- My Vector labai artimas std::vector push_back našumui
+- Abu konteineriai turi O(n) augimą
+- Reallocacijos sutampa → teisinga grow strategija
+- My Vector yra tinkamas STL imitacijos sprendimas
+
+---
+
+## TECHNINĖ INFORMACIJA
+
+My Vector palaiko:
+- push_back
+- erase (iterator)
+- begin / end
+- dynamic resizing
+- realloc tracking
+
+---
+
+## TESTAVIMO SCENARIJAI
+
+- push_back benchmarking (10k → 100M)
+- Vector vs std::vector palyginimas
+- splitVector1/2/3 strategijos
+- failų generavimas ir skaitymas
+
+---
+
+## BUILD
+
+g++ -O2 -std=c++17 *.cpp -o app
+
+---
+
+## PASTABOS
+
+- Naudotas chrono high_resolution_clock
+- Testai atlikti release režimu
+- Rezultatai gali skirtis pagal CPU apkrovą
