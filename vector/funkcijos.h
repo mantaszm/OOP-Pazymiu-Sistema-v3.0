@@ -19,6 +19,8 @@
 #include <initializer_list>
 #include <stdexcept>
 
+#include "mano_vector.h"
+
 class Zmogus {
 protected:
     std::string vardas_;
@@ -43,7 +45,7 @@ private:
     uint16_t namuDarbaiVid100_;
     uint16_t namuDarbaiMed100_;
     uint8_t egzaminas_;
-    std::vector<short int> ND_;
+    Vector<short int> ND_;
 
 public:
     Studentas();
@@ -54,7 +56,7 @@ public:
               uint8_t egzaminas,
               uint16_t namuDarbaiVid100,
               uint16_t namuDarbaiMed100,
-              const std::vector<short int>& ND = {});
+              const Vector<short int>& ND = {});
 
     Studentas(const Studentas& other);
     Studentas& operator=(const Studentas& other);
@@ -64,12 +66,12 @@ public:
     uint16_t getNamuDarbaiVid100() const;
     uint16_t getNamuDarbaiMed100() const;
     uint8_t getEgzaminas() const;
-    const std::vector<short int>& getND() const;
+    const Vector<short int>& getND() const;
 
     void setNamuDarbaiVid100(uint16_t value);
     void setNamuDarbaiMed100(uint16_t value);
     void setEgzaminas(uint8_t value);
-    void setND(const std::vector<short int>& value);
+    void setND(const Vector<short int>& value);
     void addND(short int pazymys);
 
     double galutinisVid() const;
@@ -81,8 +83,8 @@ public:
 std::istream& operator>>(std::istream& in, Studentas& s);
 std::ostream& operator<<(std::ostream& out, const Studentas& s);
 
-std::vector<Studentas> readFile(const std::string& filename, bool saveND = false);
-std::vector<Studentas> readTerminal();
+Vector<Studentas> readFile(const std::string& filename, bool saveND = false);
+Vector<Studentas> readTerminal();
 void generateFile(int kiekStud, int kiekND, std::string fileName);
 void splitStudents(std::string dataFileName, std::string newFileName);
 void testFileCreation(int kiekStud, int kiekND, const std::string& fileName);
@@ -92,17 +94,19 @@ void testClass();
 
 template<typename Container>
 double testPushBack(Container& c, size_t sz);
-void runBenchmarks(size_t sz);
+void runTimeBenchmarks(size_t sz);
+size_t testStdVector(size_t n);
+size_t testMyVector(size_t n);
 
-void splitVector1(const std::vector<Studentas>& studentai,
-                  std::vector<Studentas>& vargsiukai,
-                  std::vector<Studentas>& kietiakai);
+void splitVector1(const Vector<Studentas>& studentai,
+                  Vector<Studentas>& vargsiukai,
+                  Vector<Studentas>& kietiakai);
 
-void splitVector2(std::vector<Studentas>& studentai,
-                  std::vector<Studentas>& vargsiukai);
+void splitVector2(Vector<Studentas>& studentai,
+                  Vector<Studentas>& vargsiukai);
 
-void splitVector3(std::vector<Studentas>& studentai,
-                  std::vector<Studentas>& vargsiukai);
+void splitVector3(Vector<Studentas>& studentai,
+                  Vector<Studentas>& vargsiukai);
 
 void splitList1(const std::list<Studentas>& studentai,
                 std::list<Studentas>& vargsiukai,
