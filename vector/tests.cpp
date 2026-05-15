@@ -174,7 +174,7 @@ void testReadFile() {
     out << "Ona Onaite 6 7 8 9\n";
     out.close();
 
-    std::vector<Studentas> studentai = readFile(fileName, true);
+    Vector<Studentas> studentai = readFile(fileName, true);
 
     assert(studentai.size() == 2);
 
@@ -203,7 +203,7 @@ void testReadFileWithoutSavingND() {
     out << "Tomas Tomaitis 5 6 7\n";
     out.close();
 
-    std::vector<Studentas> studentai = readFile(fileName, false);
+    Vector<Studentas> studentai = readFile(fileName, false);
 
     assert(studentai.size() == 1);
     assert(studentai[0].getVardas() == "Tomas");
