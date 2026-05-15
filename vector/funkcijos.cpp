@@ -37,7 +37,7 @@ Studentas::Studentas(const std::string& vardas,
                      uint8_t egzaminas,
                      uint16_t namuDarbaiVid100,
                      uint16_t namuDarbaiMed100,
-                     const std::vector<short int>& ND)
+                     const Vector<short int>& ND)
     : Zmogus(vardas, pavarde),
       namuDarbaiVid100_(namuDarbaiVid100),
       namuDarbaiMed100_(namuDarbaiMed100),
@@ -105,7 +105,7 @@ uint8_t Studentas::getEgzaminas() const {
     return egzaminas_;
 }
 
-const std::vector<short int>& Studentas::getND() const {
+const Vector<short int>& Studentas::getND() const {
     return ND_;
 }
 
@@ -121,7 +121,7 @@ void Studentas::setEgzaminas(uint8_t value) {
     egzaminas_ = value;
 }
 
-void Studentas::setND(const std::vector<short int>& value) {
+void Studentas::setND(const Vector<short int>& value) {
     ND_ = value;
 }
 
@@ -151,7 +151,7 @@ std::istream& operator>>(std::istream& in, Studentas& s) {
     s.setVardas(vardas);
     s.setPavarde(pavarde);
 
-    std::vector<short int> nd;
+    Vector<short int> nd;
     int x = 0;
 
     while (in >> x) {
@@ -205,9 +205,9 @@ std::ostream& operator<<(std::ostream& out, const Studentas& s) {
 }
 
 // Failo skaitymas
-std::vector<Studentas> readFile(const std::string& filename, bool saveND) {
+Vector<Studentas> readFile(const std::string& filename, bool saveND) {
     std::ifstream in(filename);
-    std::vector<Studentas> studentai;
+    Vector<Studentas> studentai;
 
     if (!in) {
         std::cout << "Nepavyko atidaryti failo\n";
@@ -237,8 +237,8 @@ std::vector<Studentas> readFile(const std::string& filename, bool saveND) {
 }
 
 // Skaitymas is terminalo
-std::vector<Studentas> readTerminal() {
-    std::vector<Studentas> studentai;
+Vector<Studentas> readTerminal() {
+    Vector<Studentas> studentai;
     Studentas temp;
 
     int mode = 0;
@@ -321,7 +321,7 @@ std::vector<Studentas> readTerminal() {
 
         int suma = 0;
         int kiek = 0;
-        std::vector<int> nd_pazymiai;
+        Vector<int> nd_pazymiai;
 
         if (mode == 1) {
             std::cout << "Iveskite namu darbu pazymius (atskirtus tarpais): ";
@@ -420,7 +420,7 @@ void generateFile(int kiekStud, int kiekND, std::string fileName) {
 
 // Studentu skaidymas i failus
 void splitStudents(std::string dataFileName, std::string newFileName) {
-    std::vector<Studentas> mokiniai = readFile(dataFileName, true);
+    Vector<Studentas> mokiniai = readFile(dataFileName, true);
 
     std::ofstream outGood("good_" + newFileName);
     std::ofstream outBad("bad_" + newFileName);
@@ -476,10 +476,10 @@ void testFileCreation(int kiekStud, int kiekND, const std::string& fileName) {
 
 void testDataProcessing(const std::string& fileName) {
     auto t0 = std::chrono::high_resolution_clock::now();
-    std::vector<Studentas> students = readFile(fileName, true);
+    Vector<Studentas> students = readFile(fileName, true);
     auto t1 = std::chrono::high_resolution_clock::now();
 
-    std::vector<Studentas> good, bad;
+    Vector<Studentas> good, bad;
     for (const auto& s : students) {
         if (s.galutinisVid() >= 5.0) {
             good.push_back(s);
@@ -516,25 +516,52 @@ double testPushBack(Container& c, size_t sz) {
     return std::chrono::duration<double>(end - start).count();
 }
 
-void runBenchmarks(size_t sz) {
+void runTimeBenchmarks(size_t sz) {
     std::cout << "\nSIZE = " << sz << "\n";
 
-    // std::vector
-    std::vector<int> v1;
+    // Vector
+    Vector<int> v1;
     double t1 = testPushBack(v1, sz);
 
     // my vector
     Vector<int> v2;
     double t2 = testPushBack(v2, sz);
 
-    std::cout << "std::vector: " << t1 << " s\n";
+    std::cout << "Vector: " << t1 << " s\n";
     std::cout << "Vector      : " << t2 << " s\n";
 }
 
+size_t testStdVector(size_t n) {
+    Vector<int> c;
+
+    size_t reallocs = 0;
+    size_t prev_capacity = 0;
+
+    for (size_t i = 0; i < n; ++i) {
+        c.push_back(i);
+
+        if (c.capacity() != prev_capacity) {
+            prev_capacity = c.capacity();
+            ++reallocs;
+        }
+    }
+
+    return reallocs;
+}
+
+size_t testMyVector(size_t n) {
+    Vector<int> v;
+
+    for (size_t i = 0; i < n; ++i)
+        v.push_back(i);
+
+    return v.getReallocations();
+}
+
 // VECTOR strategijos
-void splitVector1(const std::vector<Studentas>& studentai,
-                  std::vector<Studentas>& vargsiukai,
-                  std::vector<Studentas>& kietiakai) {
+void splitVector1(const Vector<Studentas>& studentai,
+                  Vector<Studentas>& vargsiukai,
+                  Vector<Studentas>& kietiakai) {
     for (const auto& s : studentai) {
         if (s.galutinisVid() < 5.0) {
             vargsiukai.push_back(s);
@@ -544,8 +571,8 @@ void splitVector1(const std::vector<Studentas>& studentai,
     }
 }
 
-void splitVector2(std::vector<Studentas>& studentai,
-                  std::vector<Studentas>& vargsiukai) {
+void splitVector2(Vector<Studentas>& studentai,
+                  Vector<Studentas>& vargsiukai) {
     for (auto it = studentai.begin(); it != studentai.end();) {
         if (it->galutinisVid() < 5.0) {
             vargsiukai.push_back(*it);
@@ -556,8 +583,8 @@ void splitVector2(std::vector<Studentas>& studentai,
     }
 }
 
-void splitVector3(std::vector<Studentas>& studentai,
-                  std::vector<Studentas>& vargsiukai) {
+void splitVector3(Vector<Studentas>& studentai,
+                  Vector<Studentas>& vargsiukai) {
     auto it = std::partition(studentai.begin(), studentai.end(),
         [](const Studentas& s) {
             return s.galutinisVid() >= 5.0;
