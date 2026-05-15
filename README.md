@@ -13,7 +13,7 @@
 
 ---
 
-## ⚙️ Funkcionalumas
+## Funkcionalumas
 
 Programa leidžia:
 - Įvesti studentus terminale
