@@ -2,7 +2,7 @@
 #include "mano_vector.h"
 
 int main() {
-    std::vector<Studentas> studentai;
+    Vector<Studentas> studentai;
 
     std::cout << "Pasirinkite:\n";
     std::cout << "1 - mokiniu ivestis terminale\n";
@@ -14,7 +14,8 @@ int main() {
     std::cout << "7 - testuoti strategijas su deque\n";
     std::cout << "8 - senas bendras laiko testas\n";
     std::cout << "9 - metodu testas\n";
-    std::cout << "0 - testuoti mano vector pries std::vector\n";
+    std::cout << "0 - testuoti mano vector pries Vector laikus\n";
+    std::cout << "a - testuoti mano vector pries Vector perskirstymus\n";
     
     char pasirinkimas;
     std::cin >> pasirinkimas;
@@ -63,7 +64,12 @@ int main() {
         std::cout << "Iveskite failo pavadinima: ";
         std::getline(std::cin, failas);
 
-        std::vector<Studentas> studentaiTest = readFile(failas);
+        auto start1 = std::chrono::high_resolution_clock::now();
+
+        Vector<Studentas> studentaiTest = readFile(failas);
+        
+        auto end1 = std::chrono::high_resolution_clock::now();
+        std::chrono::duration<double> elapsed1 = end1 - start1;
 
         if (studentaiTest.empty()) {
             std::cout << "Nepavyko nuskaityti studentu.\n";
@@ -81,8 +87,8 @@ int main() {
         auto start = std::chrono::high_resolution_clock::now();
 
         if (strategija == '1') {
-            std::vector<Studentas> vargsiukai;
-            std::vector<Studentas> kietiakai;
+            Vector<Studentas> vargsiukai;
+            Vector<Studentas> kietiakai;
             splitVector1(studentaiTest, vargsiukai, kietiakai);
 
             auto end = std::chrono::high_resolution_clock::now();
@@ -91,10 +97,11 @@ int main() {
             std::cout << "\nVECTOR 1 strategija baigta\n";
             std::cout << "Vargsiukai: " << vargsiukai.size() << "\n";
             std::cout << "Kietiakai: " << kietiakai.size() << "\n";
-            std::cout << "Laikas: " << elapsed.count() << " s\n";
+            std::cout << "Dalinimo laikas: " << elapsed.count() << " s\n";
+            std::cout << "Read laikas: " << elapsed1.count() << " s\n";
         }
         else if (strategija == '2') {
-            std::vector<Studentas> vargsiukai;
+            Vector<Studentas> vargsiukai;
             splitVector2(studentaiTest, vargsiukai);
 
             auto end = std::chrono::high_resolution_clock::now();
@@ -103,10 +110,11 @@ int main() {
             std::cout << "\nVECTOR 2 strategija baigta\n";
             std::cout << "Vargsiukai: " << vargsiukai.size() << "\n";
             std::cout << "Kietiakai: " << studentaiTest.size() << "\n";
-            std::cout << "Laikas: " << elapsed.count() << " s\n";
+            std::cout << "Dalinimo laikas: " << elapsed.count() << " s\n";
+            std::cout << "Read laikas: " << elapsed1.count() << " s\n";
         }
         else if (strategija == '3') {
-            std::vector<Studentas> vargsiukai;
+            Vector<Studentas> vargsiukai;
             splitVector3(studentaiTest, vargsiukai);
 
             auto end = std::chrono::high_resolution_clock::now();
@@ -115,7 +123,8 @@ int main() {
             std::cout << "\nVECTOR 3 strategija baigta\n";
             std::cout << "Vargsiukai: " << vargsiukai.size() << "\n";
             std::cout << "Kietiakai: " << studentaiTest.size() << "\n";
-            std::cout << "Laikas: " << elapsed.count() << " s\n";
+            std::cout << "Dalinimo laikas: " << elapsed.count() << " s\n";
+            std::cout << "Read laikas: " << elapsed1.count() << " s\n";
         }
         else {
             std::cout << "Netinkama strategija.\n";
@@ -128,7 +137,7 @@ int main() {
         std::cout << "Iveskite failo pavadinima: ";
         std::getline(std::cin, failas);
 
-        std::vector<Studentas> temp = readFile(failas);
+        Vector<Studentas> temp = readFile(failas);
         if (temp.empty()) {
             std::cout << "Nepavyko nuskaityti studentu.\n";
             return 0;
@@ -197,7 +206,7 @@ int main() {
         std::cout << "Iveskite failo pavadinima: ";
         std::getline(std::cin, failas);
 
-        std::vector<Studentas> temp = readFile(failas);
+        Vector<Studentas> temp = readFile(failas);
         if (temp.empty()) {
             std::cout << "Nepavyko nuskaityti studentu.\n";
             return 0;
@@ -285,10 +294,25 @@ int main() {
         };
 
         for (size_t sz : tests) {
-            runBenchmarks(sz);
+            runTimeBenchmarks(sz);
         }
         int stop;
         std::cin >> stop;
+        return 0;
+    }
+    else if (pasirinkimas == 'a') {
+        const size_t N = 100000000;
+
+        std::cout << "Testing Vector...\n";
+        size_t stdReallocs = testStdVector(N);
+
+        std::cout << "Testing My Vector...\n";
+        size_t myReallocs = testMyVector(N);
+
+        std::cout << "\nRESULTS:\n";
+        std::cout << "Vector reallocations: " << stdReallocs << "\n";
+        std::cout << "My Vector reallocations: " << myReallocs << "\n";
+
         return 0;
     }
     else {
