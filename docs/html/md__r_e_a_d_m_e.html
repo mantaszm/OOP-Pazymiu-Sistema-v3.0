@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="lt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>OOP Pazymiu Sistema: Vector konteinerio projektas (STL imitacija)</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">OOP Pazymiu Sistema<span id="projectnumber">&#160;3.0</span>
+   </div>
+   <div id="projectbrief">Studentu pazymiu skaiciavimo sistema</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Sugeneruota Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Paieška" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('md__r_e_a_d_m_e.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">Vector konteinerio projektas (STL imitacija) </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="autotoc_md0"></a></p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
+1. Projekto aprašymas</h1>
+<p>Šiame projekte realizuota nuosava <span class="tt"><a class="el" href="class_vector.html" title="Dinaminis masyvas (std::vector analogas).">Vector</a>&lt;T&gt;</span> klasė, imituojanti <span class="tt">std::vector</span> funkcionalumą. <br  />
+ Konteineris palaiko dinaminę atmintį, <span class="tt">push_back</span>, <span class="tt">insert</span>, <span class="tt">erase</span>, iteraciją, copy ir move semantiką.</p>
+<p>Taip pat atliktas palyginimas su <span class="tt">std::vector</span> pagal veikimo greitį.</p>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
+2. Realizuotos pagrindinės funkcijos (STL analogai)</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+push_back</h2>
+<p>Prideda elementą į vektoriaus galą.</p>
+<p>v.push_back(10);</p>
+<hr  />
+<h2 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+insert</h2>
+<p>Įterpia elementą į nurodytą vietą.</p>
+<p>v.insert(1, 99);</p>
+<hr  />
+<h2 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+erase</h2>
+<p>Pašalina elementą pagal indeksą.</p>
+<p>v.erase(0);</p>
+<hr  />
+<h2 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
+reserve</h2>
+<p>Padidina talpą iš anksto.</p>
+<p>v.reserve(1000);</p>
+<hr  />
+<h2 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
+operator[]</h2>
+<p>Prieiga prie elemento.</p>
+<p>int x = v[0];</p>
+<hr  />
+<h2 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
+Papildomai realizuota:</h2>
+<ul>
+<li>copy constructor</li>
+<li>copy assignment</li>
+<li>move constructor</li>
+<li>move assignment</li>
+<li>begin(), end()</li>
+<li>size(), capacity()</li>
+<li>shrink_to_fit()</li>
+<li>clear()</li>
+</ul>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
+3. Testų paleidimas</h1>
+<p>Testai paleidžiami per funkciją:</p>
+<p>int <a class="el" href="main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main()</a> { <a class="el" href="funkcijos_8h.html#a88b00615c6bdeeb01ec34765779f6e30">testClass()</a>; }</p>
+<p>Jei gaunama klaida: undefined reference to <a class="el" href="funkcijos_8h.html#a88b00615c6bdeeb01ec34765779f6e30">testClass()</a></p>
+<p>reiškia, kad reikia į kompiliaciją įtraukti .cpp failą:</p>
+<p>g++ <a class="el" href="main_8cpp.html">main.cpp</a> <a class="el" href="funkcijos_8cpp.html">funkcijos.cpp</a> -o app</p>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
+4. Spartos analizė (push_back)</h1>
+<p>Rezultatai:</p>
+<p>SIZE = 10000 <br  />
+ std::vector: 9.2e-05 s <br  />
+ <a class="el" href="class_vector.html" title="Dinaminis masyvas (std::vector analogas).">Vector</a>: 6.3e-05 s <br  />
+</p>
+<p>SIZE = 100000 <br  />
+ std::vector: 0.00066 s <br  />
+ <a class="el" href="class_vector.html" title="Dinaminis masyvas (std::vector analogas).">Vector</a>: 0.00056 s <br  />
+</p>
+<p>SIZE = 1000000 <br  />
+ std::vector: 0.003499 s <br  />
+ <a class="el" href="class_vector.html" title="Dinaminis masyvas (std::vector analogas).">Vector</a>: 0.003694 s <br  />
+</p>
+<p>SIZE = 10000000 <br  />
+ std::vector: 0.035827 s <br  />
+ <a class="el" href="class_vector.html" title="Dinaminis masyvas (std::vector analogas).">Vector</a>: 0.03508 s <br  />
+</p>
+<p>SIZE = 100000000 <br  />
+ std::vector: 0.270734 s <br  />
+ <a class="el" href="class_vector.html" title="Dinaminis masyvas (std::vector analogas).">Vector</a>: 0.316023 s <br  />
+</p>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md20"></a>
+5. Analizė</h1>
+<ul>
+<li>Mažiems dydžiams <a class="el" href="class_vector.html" title="Dinaminis masyvas (std::vector analogas).">Vector</a> kartais greitesnis dėl paprastesnės implementacijos</li>
+<li>Dideliems dydžiams std::vector dažniausiai efektyvesnis</li>
+</ul>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md22"></a>
+6. Testuotos funkcijos</h1>
+<ul>
+<li>push_back</li>
+<li>insert</li>
+<li>erase</li>
+<li>copy/move</li>
+<li>file read/write</li>
+<li>studentų apdorojimas</li>
+</ul>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md24"></a>
+7. Išvada</h1>
+<p>Sukurta <a class="el" href="class_vector.html" title="Dinaminis masyvas (std::vector analogas).">Vector&lt;T&gt;</a> klasė:</p><ul>
+<li>atitinka ~80–90% std::vector funkcionalumo</li>
+<li>palaiko move semantics</li>
+<li>veikia su realiais duomenimis</li>
+<li>leidžia atlikti performance analizę</li>
+</ul>
+<hr  />
+<h1 class="doxsection"><a class="anchor" id="autotoc_md26"></a>
+8. Paleidimas</h1>
+<p>g++ <a class="el" href="main_8cpp.html">main.cpp</a> <a class="el" href="funkcijos_8cpp.html">funkcijos.cpp</a> -O2 -o app ./app </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Sugeneruota <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,602 @@
+\doxysection{Vector\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Klasė Šablonas}
+\hypertarget{class_vector}{}\label{class_vector}\index{Vector$<$ T $>$@{Vector$<$ T $>$}}
+
+
+Dinaminis masyvas (std::\+vector analogas).  
+
+
+
+
+{\ttfamily \+\#include $<$mano\+\_\+vector.\+h$>$}
+
+\doxysubsubsection*{Vieši Tipai}
+\begin{DoxyCompactItemize}
+\item 
+using \doxymbox{\hyperlink{class_vector_ac0f3602bfd8099ecf53f9aeb3cb90528}{iterator}} = T\texorpdfstring{$\ast$}{*}
+\item 
+using \doxymbox{\hyperlink{class_vector_ab5c7c5bd8876148f2a11fdce1c221776}{const\+\_\+iterator}} = const T\texorpdfstring{$\ast$}{*}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Vieši Metodai}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_vector_a39d6069675db4ecfc1ab81d440da759a}{Vector}} ()
+\begin{DoxyCompactList}\small\item\em Default konstruktorius. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_vector_a62624f9c52abba2d56410d3c5723cc94}{Vector}} (size\+\_\+t n, const T \&value=T())
+\begin{DoxyCompactList}\small\item\em Sukuria vector su n elementų \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_vector_a8d4ab361a0285a27e994707c43e50b21}{Vector}} (std::\+initializer\+\_\+list$<$ T $>$ init)
+\begin{DoxyCompactList}\small\item\em initializer\+\_\+list konstruktorius \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_vector_afd524fac19e6d3d69db5198ffe2952b0}{\texorpdfstring{$\sim$}{\string~}\+Vector}} ()
+\begin{DoxyCompactList}\small\item\em Destruktorius. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_vector_a940f94b7c4a1c15a65a1ab6e13859dfe}{Vector}} (const \doxymbox{\hyperlink{class_vector}{Vector}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy konstruktorius. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_vector}{Vector}} \& \doxymbox{\hyperlink{class_vector_a2fe37b54a47d28015829196cb5abec05}{operator=}} (const \doxymbox{\hyperlink{class_vector}{Vector}} \&other)
+\begin{DoxyCompactList}\small\item\em Copy assignment. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_vector_a5ed9bb7852ccee071f8418d10182927f}{Vector}} (\doxymbox{\hyperlink{class_vector}{Vector}} \&\&other) noexcept
+\begin{DoxyCompactList}\small\item\em Move konstruktorius. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_vector}{Vector}} \& \doxymbox{\hyperlink{class_vector_ac7a5d1c7410208d7ce8f13497e31dd87}{operator=}} (\doxymbox{\hyperlink{class_vector}{Vector}} \&\&other) noexcept
+\begin{DoxyCompactList}\small\item\em Move assignment. \end{DoxyCompactList}\item 
+T \& \doxymbox{\hyperlink{class_vector_a31102212204be8e4197a1deac5faa48c}{operator\+[$\,$]\+}} (size\+\_\+t i)
+\begin{DoxyCompactList}\small\item\em operator \+[]\+ \end{DoxyCompactList}\item 
+const T \& \doxymbox{\hyperlink{class_vector_a8789bf3c232d443c5f46c709fd655e4c}{operator\+[$\,$]\+}} (size\+\_\+t i) const
+\item 
+T \& \doxymbox{\hyperlink{class_vector_a0061cc9127a9cbf541439121998a1fdd}{front}} ()
+\item 
+T \& \doxymbox{\hyperlink{class_vector_a6decf0bdeb6849bfcc151b2c514f639f}{back}} ()
+\item 
+const T \& \doxymbox{\hyperlink{class_vector_ae891494a5654af2db2a00d162c50985a}{front}} () const
+\item 
+const T \& \doxymbox{\hyperlink{class_vector_ae2094e298cbe0394557b9213942a31d1}{back}} () const
+\item 
+size\+\_\+t \doxymbox{\hyperlink{class_vector_aa20e4f88ef0256680e90afab32af18cd}{size}} () const noexcept
+\item 
+size\+\_\+t \doxymbox{\hyperlink{class_vector_a0ae443c1b96d4411eae21c905a867459}{capacity}} () const noexcept
+\item 
+bool \doxymbox{\hyperlink{class_vector_a2f639b492129a072de508b75b73fe569}{empty}} () const noexcept
+\item 
+size\+\_\+t \doxymbox{\hyperlink{class_vector_ad20753e85f4465bc51f4e1565095cacd}{get\+Reallocations}} () const noexcept
+\item 
+void \doxymbox{\hyperlink{class_vector_aa09be2eebfc577f335aa2786e5c5f237}{reserve}} (size\+\_\+t new\+\_\+cap)
+\item 
+void \doxymbox{\hyperlink{class_vector_ad6454ce193263b8000d4c18cb0c3a0c8}{shrink\+\_\+to\+\_\+fit}} ()
+\item 
+void \doxymbox{\hyperlink{class_vector_a4415960a83615855ec32f8169f641786}{push\+\_\+back}} (const T \&value)
+\begin{DoxyCompactList}\small\item\em push\+\_\+back \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_vector_a7e9c3a4530e85fd3490d932846307683}{push\+\_\+back}} (T \&\&value)
+\item 
+void \doxymbox{\hyperlink{class_vector_adcba035109febbe55cba2a25f8483ba6}{pop\+\_\+back}} ()
+\begin{DoxyCompactList}\small\item\em pop\+\_\+back \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_vector_a32ad98b135472b0ebc5d6cb3ae5d0085}{clear}} ()
+\begin{DoxyCompactList}\small\item\em clear \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_vector_a369204d03cbb5750440ec38d7caad3bb}{erase}} (size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em erase pagal index \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_vector_ac0f3602bfd8099ecf53f9aeb3cb90528}{iterator}} \doxymbox{\hyperlink{class_vector_a194e680eeb778ebccf842107d46e768a}{erase}} (\doxymbox{\hyperlink{class_vector_ac0f3602bfd8099ecf53f9aeb3cb90528}{iterator}} it)
+\begin{DoxyCompactList}\small\item\em erase iterator (vienas elementas) \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_vector_ac0f3602bfd8099ecf53f9aeb3cb90528}{iterator}} \doxymbox{\hyperlink{class_vector_afd90059f9dff48f4417b51f6eae8e152}{erase}} (\doxymbox{\hyperlink{class_vector_ac0f3602bfd8099ecf53f9aeb3cb90528}{iterator}} first, \doxymbox{\hyperlink{class_vector_ac0f3602bfd8099ecf53f9aeb3cb90528}{iterator}} last)
+\begin{DoxyCompactList}\small\item\em erase intervalas \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_vector_a597069ade585b770e87a588ab8313b76}{insert}} (size\+\_\+t index, const T \&value)
+\begin{DoxyCompactList}\small\item\em insert \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_vector_ac0f3602bfd8099ecf53f9aeb3cb90528}{iterator}} \doxymbox{\hyperlink{class_vector_a466e8c045ea10d62c28b689888e9fe5a}{begin}} ()
+\item 
+\doxymbox{\hyperlink{class_vector_ac0f3602bfd8099ecf53f9aeb3cb90528}{iterator}} \doxymbox{\hyperlink{class_vector_ae288fa619188bff101d5300b8aaf9a90}{end}} ()
+\item 
+\doxymbox{\hyperlink{class_vector_ab5c7c5bd8876148f2a11fdce1c221776}{const\+\_\+iterator}} \doxymbox{\hyperlink{class_vector_a514c5f6246f07f0012f1d00912838b19}{begin}} () const
+\item 
+\doxymbox{\hyperlink{class_vector_ab5c7c5bd8876148f2a11fdce1c221776}{const\+\_\+iterator}} \doxymbox{\hyperlink{class_vector_a3f5f39e8ec9f506664b259299e79c485}{end}} () const
+\item 
+bool \doxymbox{\hyperlink{class_vector_a1b2b4d9dc3df91e091a709322b76859a}{operator==}} (const \doxymbox{\hyperlink{class_vector}{Vector}} \&other) const
+\item 
+bool \doxymbox{\hyperlink{class_vector_aeb226de8807a211671abc6864858bf6b}{operator!=}} (const \doxymbox{\hyperlink{class_vector}{Vector}} \&other) const
+\item 
+void \doxymbox{\hyperlink{class_vector_a04719915f34b27674e1eca2c42e48eb2}{swap}} (\doxymbox{\hyperlink{class_vector}{Vector}} \&other) noexcept
+\begin{DoxyCompactList}\small\item\em swap \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Smulkus aprašymas}
+\subsubsection*{template$<$typename T$>$\newline
+class Vector$<$ T $>$}
+Dinaminis masyvas (std::\+vector analogas). 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & elementų tipas \\
+\hline
+\end{DoxyTemplParams}
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00013}{13}}.
+
+
+
+\label{class_vector_doc-typedef-members}
+\Hypertarget{class_vector_doc-typedef-members}
+\doxysubsection{Tipo Aprašymo Dokumentacija}
+\Hypertarget{class_vector_ab5c7c5bd8876148f2a11fdce1c221776}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!const\_iterator@{const\_iterator}}
+\index{const\_iterator@{const\_iterator}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{const\_iterator}{const\_iterator}}
+{\footnotesize\ttfamily \label{class_vector_ab5c7c5bd8876148f2a11fdce1c221776} 
+template$<$typename T$>$ \\
+using \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+const\+\_\+iterator = const T\texorpdfstring{$\ast$}{*}}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00038}{38}}.
+
+\Hypertarget{class_vector_ac0f3602bfd8099ecf53f9aeb3cb90528}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!iterator@{iterator}}
+\index{iterator@{iterator}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{iterator}{iterator}}
+{\footnotesize\ttfamily \label{class_vector_ac0f3602bfd8099ecf53f9aeb3cb90528} 
+template$<$typename T$>$ \\
+using \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+iterator = T\texorpdfstring{$\ast$}{*}}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00037}{37}}.
+
+
+
+\label{class_vector_doc-constructors}
+\Hypertarget{class_vector_doc-constructors}
+\doxysubsection{Konstruktoriaus ir Destruktoriaus Dokumentacija}
+\Hypertarget{class_vector_a39d6069675db4ecfc1ab81d440da759a}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!Vector@{Vector}}
+\index{Vector@{Vector}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily \label{class_vector_a39d6069675db4ecfc1ab81d440da759a} 
+template$<$typename T$>$ \\
+\doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+\+Vector (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default konstruktorius. 
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00043}{43}}.
+
+\Hypertarget{class_vector_a62624f9c52abba2d56410d3c5723cc94}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!Vector@{Vector}}
+\index{Vector@{Vector}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily \label{class_vector_a62624f9c52abba2d56410d3c5723cc94} 
+template$<$typename T$>$ \\
+\doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+\+Vector (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{n}{, }\item[{const T \&}]{value}{ = {\ttfamily T()}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Sukuria vector su n elementų 
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00049}{49}}.
+
+\Hypertarget{class_vector_a8d4ab361a0285a27e994707c43e50b21}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!Vector@{Vector}}
+\index{Vector@{Vector}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily \label{class_vector_a8d4ab361a0285a27e994707c43e50b21} 
+template$<$typename T$>$ \\
+\doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+\+Vector (\begin{DoxyParamCaption}\item[{std::\+initializer\+\_\+list$<$ T $>$}]{init}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+initializer\+\_\+list konstruktorius 
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00058}{58}}.
+
+\Hypertarget{class_vector_afd524fac19e6d3d69db5198ffe2952b0}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!````~Vector@{\texorpdfstring{$\sim$}{\string~}Vector}}
+\index{````~Vector@{\texorpdfstring{$\sim$}{\string~}Vector}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Vector()}{\string~Vector()}}
+{\footnotesize\ttfamily \label{class_vector_afd524fac19e6d3d69db5198ffe2952b0} 
+template$<$typename T$>$ \\
+\doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+\texorpdfstring{$\sim$}{\string~}\doxymbox{\hyperlink{class_vector}{Vector}} (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Destruktorius. 
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00068}{68}}.
+
+\Hypertarget{class_vector_a940f94b7c4a1c15a65a1ab6e13859dfe}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!Vector@{Vector}}
+\index{Vector@{Vector}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily \label{class_vector_a940f94b7c4a1c15a65a1ab6e13859dfe} 
+template$<$typename T$>$ \\
+\doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+\+Vector (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$ \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy konstruktorius. 
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00075}{75}}.
+
+\Hypertarget{class_vector_a5ed9bb7852ccee071f8418d10182927f}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!Vector@{Vector}}
+\index{Vector@{Vector}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Vector()}{Vector()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily \label{class_vector_a5ed9bb7852ccee071f8418d10182927f} 
+template$<$typename T$>$ \\
+\doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+\+Vector (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$ \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Move konstruktorius. 
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00107}{107}}.
+
+
+
+\label{class_vector_doc-func-members}
+\Hypertarget{class_vector_doc-func-members}
+\doxysubsection{Metodų Dokumentacija}
+\Hypertarget{class_vector_a6decf0bdeb6849bfcc151b2c514f639f}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!back@{back}}
+\index{back@{back}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{back()}{back()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_vector_a6decf0bdeb6849bfcc151b2c514f639f} 
+template$<$typename T$>$ \\
+T \& \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+back (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00151}{151}}.
+
+\Hypertarget{class_vector_ae2094e298cbe0394557b9213942a31d1}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!back@{back}}
+\index{back@{back}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{back()}{back()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_vector_ae2094e298cbe0394557b9213942a31d1} 
+template$<$typename T$>$ \\
+const T \& \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+back (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00154}{154}}.
+
+\Hypertarget{class_vector_a466e8c045ea10d62c28b689888e9fe5a}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!begin@{begin}}
+\index{begin@{begin}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_vector_a466e8c045ea10d62c28b689888e9fe5a} 
+template$<$typename T$>$ \\
+\doxymbox{\hyperlink{class_vector_ac0f3602bfd8099ecf53f9aeb3cb90528}{iterator}} \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+begin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00277}{277}}.
+
+\Hypertarget{class_vector_a514c5f6246f07f0012f1d00912838b19}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!begin@{begin}}
+\index{begin@{begin}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{begin()}{begin()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_vector_a514c5f6246f07f0012f1d00912838b19} 
+template$<$typename T$>$ \\
+\doxymbox{\hyperlink{class_vector_ab5c7c5bd8876148f2a11fdce1c221776}{const\+\_\+iterator}} \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+begin (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00280}{280}}.
+
+\Hypertarget{class_vector_a0ae443c1b96d4411eae21c905a867459}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!capacity@{capacity}}
+\index{capacity@{capacity}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{capacity()}{capacity()}}
+{\footnotesize\ttfamily \label{class_vector_a0ae443c1b96d4411eae21c905a867459} 
+template$<$typename T$>$ \\
+size\+\_\+t \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+capacity (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00161}{161}}.
+
+\Hypertarget{class_vector_a32ad98b135472b0ebc5d6cb3ae5d0085}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!clear@{clear}}
+\index{clear@{clear}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily \label{class_vector_a32ad98b135472b0ebc5d6cb3ae5d0085} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+clear 
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00210}{210}}.
+
+\Hypertarget{class_vector_a2f639b492129a072de508b75b73fe569}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!empty@{empty}}
+\index{empty@{empty}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily \label{class_vector_a2f639b492129a072de508b75b73fe569} 
+template$<$typename T$>$ \\
+bool \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00162}{162}}.
+
+\Hypertarget{class_vector_ae288fa619188bff101d5300b8aaf9a90}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!end@{end}}
+\index{end@{end}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_vector_ae288fa619188bff101d5300b8aaf9a90} 
+template$<$typename T$>$ \\
+\doxymbox{\hyperlink{class_vector_ac0f3602bfd8099ecf53f9aeb3cb90528}{iterator}} \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+end (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00278}{278}}.
+
+\Hypertarget{class_vector_a3f5f39e8ec9f506664b259299e79c485}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!end@{end}}
+\index{end@{end}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{end()}{end()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_vector_a3f5f39e8ec9f506664b259299e79c485} 
+template$<$typename T$>$ \\
+\doxymbox{\hyperlink{class_vector_ab5c7c5bd8876148f2a11fdce1c221776}{const\+\_\+iterator}} \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+end (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00281}{281}}.
+
+\Hypertarget{class_vector_afd90059f9dff48f4417b51f6eae8e152}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!erase@{erase}}
+\index{erase@{erase}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_vector_afd90059f9dff48f4417b51f6eae8e152} 
+template$<$typename T$>$ \\
+\doxymbox{\hyperlink{class_vector_ac0f3602bfd8099ecf53f9aeb3cb90528}{iterator}} \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+erase (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_vector_ac0f3602bfd8099ecf53f9aeb3cb90528}{iterator}}}]{first}{, }\item[{\doxymbox{\hyperlink{class_vector_ac0f3602bfd8099ecf53f9aeb3cb90528}{iterator}}}]{last}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+erase intervalas 
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00242}{242}}.
+
+\Hypertarget{class_vector_a194e680eeb778ebccf842107d46e768a}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!erase@{erase}}
+\index{erase@{erase}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_vector_a194e680eeb778ebccf842107d46e768a} 
+template$<$typename T$>$ \\
+\doxymbox{\hyperlink{class_vector_ac0f3602bfd8099ecf53f9aeb3cb90528}{iterator}} \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+erase (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_vector_ac0f3602bfd8099ecf53f9aeb3cb90528}{iterator}}}]{it}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+erase iterator (vienas elementas) 
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00229}{229}}.
+
+\Hypertarget{class_vector_a369204d03cbb5750440ec38d7caad3bb}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!erase@{erase}}
+\index{erase@{erase}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{erase()}{erase()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_vector_a369204d03cbb5750440ec38d7caad3bb} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+erase (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+erase pagal index 
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00217}{217}}.
+
+\Hypertarget{class_vector_a0061cc9127a9cbf541439121998a1fdd}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!front@{front}}
+\index{front@{front}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{front()}{front()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_vector_a0061cc9127a9cbf541439121998a1fdd} 
+template$<$typename T$>$ \\
+T \& \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+front (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00150}{150}}.
+
+\Hypertarget{class_vector_ae891494a5654af2db2a00d162c50985a}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!front@{front}}
+\index{front@{front}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{front()}{front()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_vector_ae891494a5654af2db2a00d162c50985a} 
+template$<$typename T$>$ \\
+const T \& \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+front (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00153}{153}}.
+
+\Hypertarget{class_vector_ad20753e85f4465bc51f4e1565095cacd}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!getReallocations@{getReallocations}}
+\index{getReallocations@{getReallocations}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getReallocations()}{getReallocations()}}
+{\footnotesize\ttfamily \label{class_vector_ad20753e85f4465bc51f4e1565095cacd} 
+template$<$typename T$>$ \\
+size\+\_\+t \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+get\+Reallocations (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00164}{164}}.
+
+\Hypertarget{class_vector_a597069ade585b770e87a588ab8313b76}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!insert@{insert}}
+\index{insert@{insert}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily \label{class_vector_a597069ade585b770e87a588ab8313b76} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+insert (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index}{, }\item[{const T \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+insert 
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00258}{258}}.
+
+\Hypertarget{class_vector_aeb226de8807a211671abc6864858bf6b}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily \label{class_vector_aeb226de8807a211671abc6864858bf6b} 
+template$<$typename T$>$ \\
+bool \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+operator!= (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$ \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00297}{297}}.
+
+\Hypertarget{class_vector_a2fe37b54a47d28015829196cb5abec05}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_vector_a2fe37b54a47d28015829196cb5abec05} 
+template$<$typename T$>$ \\
+\doxymbox{\hyperlink{class_vector}{Vector}} \& \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+operator= (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$ \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy assignment. 
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00087}{87}}.
+
+\Hypertarget{class_vector_ac7a5d1c7410208d7ce8f13497e31dd87}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!operator=@{operator=}}
+\index{operator=@{operator=}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_vector_ac7a5d1c7410208d7ce8f13497e31dd87} 
+template$<$typename T$>$ \\
+\doxymbox{\hyperlink{class_vector}{Vector}} \& \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+operator= (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$ \&\&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Move assignment. 
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00122}{122}}.
+
+\Hypertarget{class_vector_a1b2b4d9dc3df91e091a709322b76859a}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!operator==@{operator==}}
+\index{operator==@{operator==}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{class_vector_a1b2b4d9dc3df91e091a709322b76859a} 
+template$<$typename T$>$ \\
+bool \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+operator== (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$ \&}]{other}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00287}{287}}.
+
+\Hypertarget{class_vector_a31102212204be8e4197a1deac5faa48c}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!operator\+[]\+@{operator[]}}
+\index{operator\+[]\+@{operator[]}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_vector_a31102212204be8e4197a1deac5faa48c} 
+template$<$typename T$>$ \\
+T \& \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+operator\+[$\,$]\+ (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+operator \+[]\+ 
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00146}{146}}.
+
+\Hypertarget{class_vector_a8789bf3c232d443c5f46c709fd655e4c}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!operator\+[]\+@{operator[]}}
+\index{operator\+[]\+@{operator[]}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_vector_a8789bf3c232d443c5f46c709fd655e4c} 
+template$<$typename T$>$ \\
+const T \& \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+operator\+[$\,$]\+ (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{i}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00148}{148}}.
+
+\Hypertarget{class_vector_adcba035109febbe55cba2a25f8483ba6}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!pop\_back@{pop\_back}}
+\index{pop\_back@{pop\_back}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{pop\_back()}{pop\_back()}}
+{\footnotesize\ttfamily \label{class_vector_adcba035109febbe55cba2a25f8483ba6} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+pop\+\_\+back (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+pop\+\_\+back 
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00202}{202}}.
+
+\Hypertarget{class_vector_a4415960a83615855ec32f8169f641786}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_vector_a4415960a83615855ec32f8169f641786} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+push\+\_\+back (\begin{DoxyParamCaption}\item[{const T \&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+push\+\_\+back 
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00183}{183}}.
+
+\Hypertarget{class_vector_a7e9c3a4530e85fd3490d932846307683}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!push\_back@{push\_back}}
+\index{push\_back@{push\_back}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{push\_back()}{push\_back()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_vector_a7e9c3a4530e85fd3490d932846307683} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+push\+\_\+back (\begin{DoxyParamCaption}\item[{T \&\&}]{value}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00191}{191}}.
+
+\Hypertarget{class_vector_aa09be2eebfc577f335aa2786e5c5f237}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!reserve@{reserve}}
+\index{reserve@{reserve}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{reserve()}{reserve()}}
+{\footnotesize\ttfamily \label{class_vector_aa09be2eebfc577f335aa2786e5c5f237} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+reserve (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{new\+\_\+cap}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00166}{166}}.
+
+\Hypertarget{class_vector_ad6454ce193263b8000d4c18cb0c3a0c8}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!shrink\_to\_fit@{shrink\_to\_fit}}
+\index{shrink\_to\_fit@{shrink\_to\_fit}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{shrink\_to\_fit()}{shrink\_to\_fit()}}
+{\footnotesize\ttfamily \label{class_vector_ad6454ce193263b8000d4c18cb0c3a0c8} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+shrink\+\_\+to\+\_\+fit (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00171}{171}}.
+
+\Hypertarget{class_vector_aa20e4f88ef0256680e90afab32af18cd}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!size@{size}}
+\index{size@{size}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily \label{class_vector_aa20e4f88ef0256680e90afab32af18cd} 
+template$<$typename T$>$ \\
+size\+\_\+t \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00160}{160}}.
+
+\Hypertarget{class_vector_a04719915f34b27674e1eca2c42e48eb2}\index{Vector$<$ T $>$@{Vector$<$ T $>$}!swap@{swap}}
+\index{swap@{swap}!Vector$<$ T $>$@{Vector$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{swap()}{swap()}}
+{\footnotesize\ttfamily \label{class_vector_a04719915f34b27674e1eca2c42e48eb2} 
+template$<$typename T$>$ \\
+void \doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$::\+swap (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_vector}{Vector}}$<$ T $>$ \&}]{other}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+
+
+
+swap 
+
+
+
+Apibrėžimas failo \doxymbox{\hyperlink{mano__vector_8h_source}{mano\+\_\+vector.\+h}} eilutėje \doxymbox{\hyperlink{mano__vector_8h_source_l00308}{308}}.
+
+
+
+Dokumentacija šiai klasei sugeneruota iš šio failo:\+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{mano__vector_8h}{mano\+\_\+vector.\+h}}\end{DoxyCompactItemize}

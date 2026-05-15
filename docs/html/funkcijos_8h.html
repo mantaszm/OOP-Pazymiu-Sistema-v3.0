@@ -1,0 +1,788 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="lt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>OOP Pazymiu Sistema: funkcijos.h Failo Nuoroda</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">OOP Pazymiu Sistema<span id="projectnumber">&#160;3.0</span>
+   </div>
+   <div id="projectbrief">Studentu pazymiu skaiciavimo sistema</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Sugeneruota Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Paieška" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('funkcijos_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">funkcijos.h Failo Nuoroda</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;iomanip&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;list&gt;</code><br />
+<code>#include &lt;deque&gt;</code><br />
+<code>#include &lt;chrono&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;random&gt;</code><br />
+<code>#include &lt;cstring&gt;</code><br />
+<code>#include &lt;sstream&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
+<code>#include &lt;cstddef&gt;</code><br />
+<code>#include &lt;initializer_list&gt;</code><br />
+<code>#include &lt;stdexcept&gt;</code><br />
+<code>#include &quot;<a class="el" href="mano__vector_8h_source.html">mano_vector.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Įtraukimo priklausomybių diagrama funkcijos.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="funkcijos_8h__incl.png" border="0" usemap="#afunkcijos_8h" loading="lazy" alt=""/></div>
+<map name="afunkcijos_8h" id="afunkcijos_8h">
+<area shape="rect" title=" " alt="" coords="663,5,747,32"/>
+<area shape="rect" title=" " alt="" coords="5,155,80,181"/>
+<area shape="poly" title=" " alt="" coords="660,20,537,24,372,31,289,39,212,49,148,64,102,82,87,94,74,109,55,142,51,139,70,106,83,90,100,78,147,59,211,44,288,33,372,26,537,18,665,19"/>
+<area shape="rect" title=" " alt="" coords="359,80,419,107"/>
+<area shape="poly" title=" " alt="" coords="660,29,435,82,434,77,665,28"/>
+<area shape="rect" title=" " alt="" coords="444,80,510,107"/>
+<area shape="poly" title=" " alt="" coords="668,32,526,79,525,74,663,33"/>
+<area shape="rect" title=" " alt="" coords="535,80,606,107"/>
+<area shape="poly" title=" " alt="" coords="684,32,609,75,607,70,679,33"/>
+<area shape="rect" title=" " alt="" coords="630,80,695,107"/>
+<area shape="poly" title=" " alt="" coords="700,31,679,69,676,65,696,34"/>
+<area shape="rect" title=" " alt="" coords="719,80,776,107"/>
+<area shape="poly" title=" " alt="" coords="714,30,735,68,730,66,711,35"/>
+<area shape="rect" title=" " alt="" coords="801,80,839,107"/>
+<area shape="poly" title=" " alt="" coords="726,30,790,72,785,71,725,35"/>
+<area shape="rect" title=" " alt="" coords="864,80,920,107"/>
+<area shape="poly" title=" " alt="" coords="738,30,852,76,847,75,737,35"/>
+<area shape="rect" title=" " alt="" coords="944,80,1005,107"/>
+<area shape="poly" title=" " alt="" coords="748,28,932,79,926,79,748,34"/>
+<area shape="rect" title=" " alt="" coords="1029,80,1082,107"/>
+<area shape="poly" title=" " alt="" coords="748,24,865,45,1017,80,1012,80,864,50,748,29"/>
+<area shape="rect" title=" " alt="" coords="1106,80,1171,107"/>
+<area shape="poly" title=" " alt="" coords="748,22,896,42,1094,79,1088,80,895,48,747,28"/>
+<area shape="rect" title=" " alt="" coords="1195,80,1255,107"/>
+<area shape="poly" title=" " alt="" coords="748,21,932,39,1054,55,1183,80,1177,80,1053,61,931,44,748,26"/>
+<area shape="rect" title=" " alt="" coords="1279,80,1347,107"/>
+<area shape="poly" title=" " alt="" coords="748,20,966,37,1112,54,1266,80,1261,80,1112,59,965,42,748,25"/>
+<area shape="rect" title=" " alt="" coords="106,155,158,181"/>
+<area shape="poly" title=" " alt="" coords="660,22,528,29,354,39,198,57,144,68,116,82,110,95,109,109,119,142,114,141,104,110,105,93,113,78,142,63,197,52,353,34,527,24,665,21"/>
+<area shape="rect" title=" " alt="" coords="184,155,248,181"/>
+<area shape="poly" title=" " alt="" coords="660,20,595,25,509,34,416,52,369,65,325,82,277,112,239,146,236,141,274,108,323,78,368,60,414,47,509,29,595,20,665,19"/>
+<area shape="rect" title=" " alt="" coords="272,155,368,181"/>
+<area shape="poly" title=" " alt="" coords="660,22,585,29,491,40,404,57,371,68,348,82,338,94,331,109,323,141,319,137,326,107,333,91,345,78,369,64,403,52,490,34,584,24,666,21"/>
+<area shape="rect" title=" " alt="" coords="1371,80,1450,107"/>
+<area shape="poly" title=" " alt="" coords="748,19,1002,36,1176,53,1359,80,1353,80,1175,58,1002,41,748,24"/>
+<area shape="rect" href="mano__vector_8h.html" title=" " alt="" coords="126,80,234,107"/>
+<area shape="poly" title=" " alt="" coords="662,28,252,83,250,83,248,78,251,77,663,22"/>
+<area shape="poly" title=" " alt="" coords="158,109,81,149,79,145,154,106"/>
+<area shape="poly" title=" " alt="" coords="174,106,150,144,147,140,169,109"/>
+<area shape="poly" title=" " alt="" coords="187,105,205,141,200,140,185,110"/>
+<area shape="poly" title=" " alt="" coords="205,105,284,147,279,147,204,110"/>
+</map>
+</div>
+</div><div class="textblock"><div class="dynheader">
+Šis grafas rodo, kuris failas tiesiogiai ar netiesiogiai įtraukia šį failą:</div>
+<div class="dyncontent">
+<div class="center"><img src="funkcijos_8h__dep__incl.png" border="0" usemap="#afunkcijos_8hdep" loading="lazy" alt=""/></div>
+<map name="afunkcijos_8hdep" id="afunkcijos_8hdep">
+<area shape="rect" title=" " alt="" coords="123,5,207,32"/>
+<area shape="rect" href="funkcijos_8cpp.html" title=" " alt="" coords="5,80,104,107"/>
+<area shape="poly" title=" " alt="" coords="136,41,75,82,73,77,131,40"/>
+<area shape="rect" href="main_8cpp.html" title=" " alt="" coords="128,80,202,107"/>
+<area shape="poly" title=" " alt="" coords="167,46,167,81,163,78,163,50"/>
+<area shape="rect" href="tests_8cpp.html" title=" " alt="" coords="226,80,302,107"/>
+<area shape="poly" title=" " alt="" coords="195,39,250,80,244,80,194,44"/>
+</map>
+</div>
+</div>
+<p><a href="funkcijos_8h_source.html">Eiti į šio failo programos kodą.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Klasės</h2></td></tr>
+<tr class="memitem:Zmogus" id="r_Zmogus"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_zmogus.html">Zmogus</a></td></tr>
+<tr class="memitem:Studentas" id="r_Studentas"><td class="memItemLeft">class &#160;</td><td class="memItemRight"><a class="el" href="class_studentas.html">Studentas</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funkcijos</h2></td></tr>
+<tr class="memitem:af8f35a3ee68335b1adb35ac85edf1c03" id="r_af8f35a3ee68335b1adb35ac85edf1c03"><td class="memItemLeft">std::istream &amp;&#160;</td><td class="memItemRight"><a class="el" href="#af8f35a3ee68335b1adb35ac85edf1c03">operator&gt;&gt;</a> (std::istream &amp;in, <a class="el" href="class_studentas.html">Studentas</a> &amp;s)</td></tr>
+<tr class="memitem:a8ef0139ac1bd9eb75f994ab35393cdad" id="r_a8ef0139ac1bd9eb75f994ab35393cdad"><td class="memItemLeft">std::ostream &amp;&#160;</td><td class="memItemRight"><a class="el" href="#a8ef0139ac1bd9eb75f994ab35393cdad">operator&lt;&lt;</a> (std::ostream &amp;out, const <a class="el" href="class_studentas.html">Studentas</a> &amp;s)</td></tr>
+<tr class="memitem:a64c73c08a3f4fe148b2d7cd47bb34147" id="r_a64c73c08a3f4fe148b2d7cd47bb34147"><td class="memItemLeft"><a class="el" href="class_vector.html">Vector</a>&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a64c73c08a3f4fe148b2d7cd47bb34147">readFile</a> (const std::string &amp;filename, bool saveND=false)</td></tr>
+<tr class="memitem:a3b846c4ee992c38776b37cdc5b61c6a3" id="r_a3b846c4ee992c38776b37cdc5b61c6a3"><td class="memItemLeft"><a class="el" href="class_vector.html">Vector</a>&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt;&#160;</td><td class="memItemRight"><a class="el" href="#a3b846c4ee992c38776b37cdc5b61c6a3">readTerminal</a> ()</td></tr>
+<tr class="memitem:acdb7571ae3fb280501d940c1b17d0db6" id="r_acdb7571ae3fb280501d940c1b17d0db6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#acdb7571ae3fb280501d940c1b17d0db6">generateFile</a> (int kiekStud, int kiekND, std::string fileName)</td></tr>
+<tr class="memitem:aab290c0f2b38a35e33cdb767eed08dbb" id="r_aab290c0f2b38a35e33cdb767eed08dbb"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aab290c0f2b38a35e33cdb767eed08dbb">splitStudents</a> (std::string dataFileName, std::string newFileName)</td></tr>
+<tr class="memitem:a4fc133f226056dfc8135a216a6b28b4f" id="r_a4fc133f226056dfc8135a216a6b28b4f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4fc133f226056dfc8135a216a6b28b4f">testFileCreation</a> (int kiekStud, int kiekND, const std::string &amp;fileName)</td></tr>
+<tr class="memitem:ab0975ac631d724cf67493822f5ea19b8" id="r_ab0975ac631d724cf67493822f5ea19b8"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab0975ac631d724cf67493822f5ea19b8">testDataProcessing</a> (const std::string &amp;fileName)</td></tr>
+<tr class="memitem:afdfc46027d89a21f9690c202b01eb6ac" id="r_afdfc46027d89a21f9690c202b01eb6ac"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#afdfc46027d89a21f9690c202b01eb6ac">testTime</a> (int testSize, int ndSize)</td></tr>
+<tr class="memitem:a88b00615c6bdeeb01ec34765779f6e30" id="r_a88b00615c6bdeeb01ec34765779f6e30"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a88b00615c6bdeeb01ec34765779f6e30">testClass</a> ()</td></tr>
+<tr class="memitem:a4fe9d04f18f908654c808e856ff38ae3" id="r_a4fe9d04f18f908654c808e856ff38ae3"><td class="memTemplParams" colspan="2">template&lt;typename Container&gt; </td></tr>
+<tr class="memitem:a4fe9d04f18f908654c808e856ff38ae3 template"><td class="memItemLeft">double&#160;</td><td class="memItemRight"><a class="el" href="#a4fe9d04f18f908654c808e856ff38ae3">testPushBack</a> (Container &amp;c, size_t sz)</td></tr>
+<tr class="memitem:a17548b0cad2c5b8ecdb800eb109ec7a2" id="r_a17548b0cad2c5b8ecdb800eb109ec7a2"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a17548b0cad2c5b8ecdb800eb109ec7a2">runTimeBenchmarks</a> (size_t sz)</td></tr>
+<tr class="memitem:aabf8fcef6554273f011207fd1d14fc70" id="r_aabf8fcef6554273f011207fd1d14fc70"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="#aabf8fcef6554273f011207fd1d14fc70">testStdVector</a> (size_t n)</td></tr>
+<tr class="memitem:a76eae3fe7cacdca08a3795f501e76ef5" id="r_a76eae3fe7cacdca08a3795f501e76ef5"><td class="memItemLeft">size_t&#160;</td><td class="memItemRight"><a class="el" href="#a76eae3fe7cacdca08a3795f501e76ef5">testMyVector</a> (size_t n)</td></tr>
+<tr class="memitem:aae72f815ba91aa618c808fadebd7db26" id="r_aae72f815ba91aa618c808fadebd7db26"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aae72f815ba91aa618c808fadebd7db26">splitVector1</a> (const <a class="el" href="class_vector.html">Vector</a>&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;studentai, <a class="el" href="class_vector.html">Vector</a>&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;vargsiukai, <a class="el" href="class_vector.html">Vector</a>&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;kietiakai)</td></tr>
+<tr class="memitem:a202ba5728877b8600ba06b99233fe142" id="r_a202ba5728877b8600ba06b99233fe142"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a202ba5728877b8600ba06b99233fe142">splitVector2</a> (<a class="el" href="class_vector.html">Vector</a>&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;studentai, <a class="el" href="class_vector.html">Vector</a>&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;vargsiukai)</td></tr>
+<tr class="memitem:ab487a32cc429afca1d310b221552471a" id="r_ab487a32cc429afca1d310b221552471a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ab487a32cc429afca1d310b221552471a">splitVector3</a> (<a class="el" href="class_vector.html">Vector</a>&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;studentai, <a class="el" href="class_vector.html">Vector</a>&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;vargsiukai)</td></tr>
+<tr class="memitem:a11967b3c169304f4baad81181d16e405" id="r_a11967b3c169304f4baad81181d16e405"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a11967b3c169304f4baad81181d16e405">splitList1</a> (const std::list&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;studentai, std::list&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;vargsiukai, std::list&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;kietiakai)</td></tr>
+<tr class="memitem:a3523f0edf9bcecac67b7426802ff1905" id="r_a3523f0edf9bcecac67b7426802ff1905"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3523f0edf9bcecac67b7426802ff1905">splitList2</a> (std::list&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;studentai, std::list&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;vargsiukai)</td></tr>
+<tr class="memitem:a5812dea8e1be5a54fcb1b6accf6089d6" id="r_a5812dea8e1be5a54fcb1b6accf6089d6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a5812dea8e1be5a54fcb1b6accf6089d6">splitList3</a> (std::list&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;studentai, std::list&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;vargsiukai)</td></tr>
+<tr class="memitem:a3b250633a6bcbd2dcc22917182db2e5e" id="r_a3b250633a6bcbd2dcc22917182db2e5e"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a3b250633a6bcbd2dcc22917182db2e5e">splitDeque1</a> (const std::deque&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;studentai, std::deque&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;vargsiukai, std::deque&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;kietiakai)</td></tr>
+<tr class="memitem:aaf5cd33cbdbd7c910b9b99e242bea89f" id="r_aaf5cd33cbdbd7c910b9b99e242bea89f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aaf5cd33cbdbd7c910b9b99e242bea89f">splitDeque2</a> (std::deque&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;studentai, std::deque&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;vargsiukai)</td></tr>
+<tr class="memitem:ae7654fd3dc1a9159e04c8d1da9b37b9b" id="r_ae7654fd3dc1a9159e04c8d1da9b37b9b"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae7654fd3dc1a9159e04c8d1da9b37b9b">splitDeque3</a> (std::deque&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;studentai, std::deque&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;vargsiukai)</td></tr>
+</table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Funkcijos Dokumentacija</h2>
+<a id="acdb7571ae3fb280501d940c1b17d0db6" name="acdb7571ae3fb280501d940c1b17d0db6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdb7571ae3fb280501d940c1b17d0db6">&#9670;&#160;</a></span>generateFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void generateFile </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>kiekStud</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>kiekND</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>fileName</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="funkcijos_8cpp_source.html">funkcijos.cpp</a> eilutėje <a class="el" href="funkcijos_8cpp_source.html#l00389">389</a>.</p>
+
+</div>
+</div>
+<a id="a8ef0139ac1bd9eb75f994ab35393cdad" name="a8ef0139ac1bd9eb75f994ab35393cdad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ef0139ac1bd9eb75f994ab35393cdad">&#9670;&#160;</a></span>operator&lt;&lt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream &amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;</td>          <td class="paramname"><span class="paramname"><em>out</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_studentas.html">Studentas</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="funkcijos_8cpp_source.html">funkcijos.cpp</a> eilutėje <a class="el" href="funkcijos_8cpp_source.html#l00197">197</a>.</p>
+
+</div>
+</div>
+<a id="af8f35a3ee68335b1adb35ac85edf1c03" name="af8f35a3ee68335b1adb35ac85edf1c03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8f35a3ee68335b1adb35ac85edf1c03">&#9670;&#160;</a></span>operator&gt;&gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::istream &amp; operator&gt;&gt; </td>
+          <td>(</td>
+          <td class="paramtype">std::istream &amp;</td>          <td class="paramname"><span class="paramname"><em>in</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_studentas.html">Studentas</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="funkcijos_8cpp_source.html">funkcijos.cpp</a> eilutėje <a class="el" href="funkcijos_8cpp_source.html#l00145">145</a>.</p>
+
+</div>
+</div>
+<a id="a64c73c08a3f4fe148b2d7cd47bb34147" name="a64c73c08a3f4fe148b2d7cd47bb34147"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64c73c08a3f4fe148b2d7cd47bb34147">&#9670;&#160;</a></span>readFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_vector.html">Vector</a>&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; readFile </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>filename</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>saveND</em></span><span class="paramdefsep"> = </span><span class="paramdefval">false</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="funkcijos_8cpp_source.html">funkcijos.cpp</a> eilutėje <a class="el" href="funkcijos_8cpp_source.html#l00208">208</a>.</p>
+
+</div>
+</div>
+<a id="a3b846c4ee992c38776b37cdc5b61c6a3" name="a3b846c4ee992c38776b37cdc5b61c6a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b846c4ee992c38776b37cdc5b61c6a3">&#9670;&#160;</a></span>readTerminal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_vector.html">Vector</a>&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; readTerminal </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="funkcijos_8cpp_source.html">funkcijos.cpp</a> eilutėje <a class="el" href="funkcijos_8cpp_source.html#l00240">240</a>.</p>
+
+</div>
+</div>
+<a id="a17548b0cad2c5b8ecdb800eb109ec7a2" name="a17548b0cad2c5b8ecdb800eb109ec7a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a17548b0cad2c5b8ecdb800eb109ec7a2">&#9670;&#160;</a></span>runTimeBenchmarks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void runTimeBenchmarks </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>sz</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="funkcijos_8cpp_source.html">funkcijos.cpp</a> eilutėje <a class="el" href="funkcijos_8cpp_source.html#l00519">519</a>.</p>
+
+</div>
+</div>
+<a id="a3b250633a6bcbd2dcc22917182db2e5e" name="a3b250633a6bcbd2dcc22917182db2e5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b250633a6bcbd2dcc22917182db2e5e">&#9670;&#160;</a></span>splitDeque1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void splitDeque1 </td>
+          <td>(</td>
+          <td class="paramtype">const std::deque&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>studentai</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::deque&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>vargsiukai</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::deque&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>kietiakai</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="funkcijos_8cpp_source.html">funkcijos.cpp</a> eilutėje <a class="el" href="funkcijos_8cpp_source.html#l00638">638</a>.</p>
+
+</div>
+</div>
+<a id="aaf5cd33cbdbd7c910b9b99e242bea89f" name="aaf5cd33cbdbd7c910b9b99e242bea89f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf5cd33cbdbd7c910b9b99e242bea89f">&#9670;&#160;</a></span>splitDeque2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void splitDeque2 </td>
+          <td>(</td>
+          <td class="paramtype">std::deque&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>studentai</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::deque&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>vargsiukai</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="funkcijos_8cpp_source.html">funkcijos.cpp</a> eilutėje <a class="el" href="funkcijos_8cpp_source.html#l00650">650</a>.</p>
+
+</div>
+</div>
+<a id="ae7654fd3dc1a9159e04c8d1da9b37b9b" name="ae7654fd3dc1a9159e04c8d1da9b37b9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7654fd3dc1a9159e04c8d1da9b37b9b">&#9670;&#160;</a></span>splitDeque3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void splitDeque3 </td>
+          <td>(</td>
+          <td class="paramtype">std::deque&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>studentai</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::deque&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>vargsiukai</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="funkcijos_8cpp_source.html">funkcijos.cpp</a> eilutėje <a class="el" href="funkcijos_8cpp_source.html#l00662">662</a>.</p>
+
+</div>
+</div>
+<a id="a11967b3c169304f4baad81181d16e405" name="a11967b3c169304f4baad81181d16e405"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11967b3c169304f4baad81181d16e405">&#9670;&#160;</a></span>splitList1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void splitList1 </td>
+          <td>(</td>
+          <td class="paramtype">const std::list&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>studentai</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::list&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>vargsiukai</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::list&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>kietiakai</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="funkcijos_8cpp_source.html">funkcijos.cpp</a> eilutėje <a class="el" href="funkcijos_8cpp_source.html#l00601">601</a>.</p>
+
+</div>
+</div>
+<a id="a3523f0edf9bcecac67b7426802ff1905" name="a3523f0edf9bcecac67b7426802ff1905"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3523f0edf9bcecac67b7426802ff1905">&#9670;&#160;</a></span>splitList2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void splitList2 </td>
+          <td>(</td>
+          <td class="paramtype">std::list&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>studentai</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::list&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>vargsiukai</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="funkcijos_8cpp_source.html">funkcijos.cpp</a> eilutėje <a class="el" href="funkcijos_8cpp_source.html#l00613">613</a>.</p>
+
+</div>
+</div>
+<a id="a5812dea8e1be5a54fcb1b6accf6089d6" name="a5812dea8e1be5a54fcb1b6accf6089d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5812dea8e1be5a54fcb1b6accf6089d6">&#9670;&#160;</a></span>splitList3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void splitList3 </td>
+          <td>(</td>
+          <td class="paramtype">std::list&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>studentai</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::list&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>vargsiukai</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="funkcijos_8cpp_source.html">funkcijos.cpp</a> eilutėje <a class="el" href="funkcijos_8cpp_source.html#l00625">625</a>.</p>
+
+</div>
+</div>
+<a id="aab290c0f2b38a35e33cdb767eed08dbb" name="aab290c0f2b38a35e33cdb767eed08dbb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab290c0f2b38a35e33cdb767eed08dbb">&#9670;&#160;</a></span>splitStudents()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void splitStudents </td>
+          <td>(</td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>dataFileName</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string</td>          <td class="paramname"><span class="paramname"><em>newFileName</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="funkcijos_8cpp_source.html">funkcijos.cpp</a> eilutėje <a class="el" href="funkcijos_8cpp_source.html#l00422">422</a>.</p>
+
+</div>
+</div>
+<a id="aae72f815ba91aa618c808fadebd7db26" name="aae72f815ba91aa618c808fadebd7db26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae72f815ba91aa618c808fadebd7db26">&#9670;&#160;</a></span>splitVector1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void splitVector1 </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_vector.html">Vector</a>&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>studentai</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_vector.html">Vector</a>&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>vargsiukai</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_vector.html">Vector</a>&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>kietiakai</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="funkcijos_8cpp_source.html">funkcijos.cpp</a> eilutėje <a class="el" href="funkcijos_8cpp_source.html#l00562">562</a>.</p>
+
+</div>
+</div>
+<a id="a202ba5728877b8600ba06b99233fe142" name="a202ba5728877b8600ba06b99233fe142"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a202ba5728877b8600ba06b99233fe142">&#9670;&#160;</a></span>splitVector2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void splitVector2 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_vector.html">Vector</a>&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>studentai</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_vector.html">Vector</a>&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>vargsiukai</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="funkcijos_8cpp_source.html">funkcijos.cpp</a> eilutėje <a class="el" href="funkcijos_8cpp_source.html#l00574">574</a>.</p>
+
+</div>
+</div>
+<a id="ab487a32cc429afca1d310b221552471a" name="ab487a32cc429afca1d310b221552471a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab487a32cc429afca1d310b221552471a">&#9670;&#160;</a></span>splitVector3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void splitVector3 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_vector.html">Vector</a>&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>studentai</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_vector.html">Vector</a>&lt; <a class="el" href="class_studentas.html">Studentas</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>vargsiukai</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="funkcijos_8cpp_source.html">funkcijos.cpp</a> eilutėje <a class="el" href="funkcijos_8cpp_source.html#l00586">586</a>.</p>
+
+</div>
+</div>
+<a id="a88b00615c6bdeeb01ec34765779f6e30" name="a88b00615c6bdeeb01ec34765779f6e30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88b00615c6bdeeb01ec34765779f6e30">&#9670;&#160;</a></span>testClass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testClass </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="tests_8cpp_source.html">tests.cpp</a> eilutėje <a class="el" href="tests_8cpp_source.html#l00300">300</a>.</p>
+
+</div>
+</div>
+<a id="ab0975ac631d724cf67493822f5ea19b8" name="ab0975ac631d724cf67493822f5ea19b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0975ac631d724cf67493822f5ea19b8">&#9670;&#160;</a></span>testDataProcessing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testDataProcessing </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>fileName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="funkcijos_8cpp_source.html">funkcijos.cpp</a> eilutėje <a class="el" href="funkcijos_8cpp_source.html#l00477">477</a>.</p>
+
+</div>
+</div>
+<a id="a4fc133f226056dfc8135a216a6b28b4f" name="a4fc133f226056dfc8135a216a6b28b4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fc133f226056dfc8135a216a6b28b4f">&#9670;&#160;</a></span>testFileCreation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testFileCreation </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>kiekStud</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>kiekND</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>fileName</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="funkcijos_8cpp_source.html">funkcijos.cpp</a> eilutėje <a class="el" href="funkcijos_8cpp_source.html#l00468">468</a>.</p>
+
+</div>
+</div>
+<a id="a76eae3fe7cacdca08a3795f501e76ef5" name="a76eae3fe7cacdca08a3795f501e76ef5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76eae3fe7cacdca08a3795f501e76ef5">&#9670;&#160;</a></span>testMyVector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t testMyVector </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="funkcijos_8cpp_source.html">funkcijos.cpp</a> eilutėje <a class="el" href="funkcijos_8cpp_source.html#l00552">552</a>.</p>
+
+</div>
+</div>
+<a id="a4fe9d04f18f908654c808e856ff38ae3" name="a4fe9d04f18f908654c808e856ff38ae3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4fe9d04f18f908654c808e856ff38ae3">&#9670;&#160;</a></span>testPushBack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Container&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">double testPushBack </td>
+          <td>(</td>
+          <td class="paramtype">Container &amp;</td>          <td class="paramname"><span class="paramname"><em>c</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>sz</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="funkcijos_8cpp_source.html">funkcijos.cpp</a> eilutėje <a class="el" href="funkcijos_8cpp_source.html#l00507">507</a>.</p>
+
+</div>
+</div>
+<a id="aabf8fcef6554273f011207fd1d14fc70" name="aabf8fcef6554273f011207fd1d14fc70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabf8fcef6554273f011207fd1d14fc70">&#9670;&#160;</a></span>testStdVector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t testStdVector </td>
+          <td>(</td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="funkcijos_8cpp_source.html">funkcijos.cpp</a> eilutėje <a class="el" href="funkcijos_8cpp_source.html#l00534">534</a>.</p>
+
+</div>
+</div>
+<a id="afdfc46027d89a21f9690c202b01eb6ac" name="afdfc46027d89a21f9690c202b01eb6ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdfc46027d89a21f9690c202b01eb6ac">&#9670;&#160;</a></span>testTime()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testTime </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>testSize</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>ndSize</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="funkcijos_8cpp_source.html">funkcijos.cpp</a> eilutėje <a class="el" href="funkcijos_8cpp_source.html#l00500">500</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_1fe2e3f40887fbec9fd2493c34e7d145.html">vector</a></li><li class="navelem"><a href="funkcijos_8h.html">funkcijos.h</a></li>
+    <li class="footer">Sugeneruota <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

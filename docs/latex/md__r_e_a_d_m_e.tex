@@ -1,0 +1,129 @@
+\chapter{Vector konteinerio projektas (STL imitacija) }
+\hypertarget{md__r_e_a_d_m_e}{}\label{md__r_e_a_d_m_e}\index{Vector konteinerio projektas (STL imitacija)@{Vector konteinerio projektas (STL imitacija)}}
+\label{md__r_e_a_d_m_e_autotoc_md0}%
+\Hypertarget{md__r_e_a_d_m_e_autotoc_md0}%
+\hypertarget{md__r_e_a_d_m_e_autotoc_md1}{}\doxysection{\texorpdfstring{1. Projekto aprašymas}{1. Projekto aprašymas}}\label{md__r_e_a_d_m_e_autotoc_md1}
+Šiame projekte realizuota nuosava {\ttfamily \doxylink{class_vector}{Vector}\texorpdfstring{$<$}{<}T\texorpdfstring{$>$}{>}} klasė, imituojanti {\ttfamily std::\+vector} funkcionalumą. ~\newline
+ Konteineris palaiko dinaminę atmintį, {\ttfamily push\+\_\+back}, {\ttfamily insert}, {\ttfamily erase}, iteraciją, copy ir move semantiką.
+
+Taip pat atliktas palyginimas su {\ttfamily std::\+vector} pagal veikimo greitį.
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md3}{}\doxysection{\texorpdfstring{2. Realizuotos pagrindinės funkcijos (STL analogai)}{2. Realizuotos pagrindinės funkcijos (STL analogai)}}\label{md__r_e_a_d_m_e_autotoc_md3}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md4}{}\doxysubsection{\texorpdfstring{push\+\_\+back}{push\+\_\+back}}\label{md__r_e_a_d_m_e_autotoc_md4}
+Prideda elementą į vektoriaus galą.
+
+v.\+push\+\_\+back(10);
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md6}{}\doxysubsection{\texorpdfstring{insert}{insert}}\label{md__r_e_a_d_m_e_autotoc_md6}
+Įterpia elementą į nurodytą vietą.
+
+v.\+insert(1, 99);
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md8}{}\doxysubsection{\texorpdfstring{erase}{erase}}\label{md__r_e_a_d_m_e_autotoc_md8}
+Pašalina elementą pagal indeksą.
+
+v.\+erase(0);
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md10}{}\doxysubsection{\texorpdfstring{reserve}{reserve}}\label{md__r_e_a_d_m_e_autotoc_md10}
+Padidina talpą iš anksto.
+
+v.\+reserve(1000);
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md12}{}\doxysubsection{\texorpdfstring{operator\+[]\+}{operator\+[]\+}}\label{md__r_e_a_d_m_e_autotoc_md12}
+Prieiga prie elemento.
+
+int x = v\+[0]\+;
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md14}{}\doxysubsection{\texorpdfstring{Papildomai realizuota:\+}{Papildomai realizuota:\+}}\label{md__r_e_a_d_m_e_autotoc_md14}
+
+\begin{DoxyItemize}
+\item copy constructor
+\item copy assignment
+\item move constructor
+\item move assignment
+\item begin(), end()
+\item size(), capacity()
+\item shrink\+\_\+to\+\_\+fit()
+\item clear()
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md16}{}\doxysection{\texorpdfstring{3. Testų paleidimas}{3. Testų paleidimas}}\label{md__r_e_a_d_m_e_autotoc_md16}
+Testai paleidžiami per funkciją:\+
+
+int \doxylink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main()} \{ \doxylink{funkcijos_8h_a88b00615c6bdeeb01ec34765779f6e30}{test\+Class()}; \}
+
+Jei gaunama klaida:\+ undefined reference to \doxylink{funkcijos_8h_a88b00615c6bdeeb01ec34765779f6e30}{test\+Class()}
+
+reiškia, kad reikia į kompiliaciją įtraukti .cpp failą:\+
+
+g++ \doxylink{main_8cpp}{main.\+cpp} \doxylink{funkcijos_8cpp}{funkcijos.\+cpp} -\/o app
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md18}{}\doxysection{\texorpdfstring{4. Spartos analizė (push\+\_\+back)}{4. Spartos analizė (push\+\_\+back)}}\label{md__r_e_a_d_m_e_autotoc_md18}
+Rezultatai:\+
+
+SIZE = 10000 ~\newline
+ std::\+vector:\+ 9.\+2e-\/05 s ~\newline
+ \doxylink{class_vector}{Vector}:\+ 6.\+3e-\/05 s ~\newline
+
+
+SIZE = 100000 ~\newline
+ std::\+vector:\+ 0.\+00066 s ~\newline
+ \doxylink{class_vector}{Vector}:\+ 0.\+00056 s ~\newline
+
+
+SIZE = 1000000 ~\newline
+ std::\+vector:\+ 0.\+003499 s ~\newline
+ \doxylink{class_vector}{Vector}:\+ 0.\+003694 s ~\newline
+
+
+SIZE = 10000000 ~\newline
+ std::\+vector:\+ 0.\+035827 s ~\newline
+ \doxylink{class_vector}{Vector}:\+ 0.\+03508 s ~\newline
+
+
+SIZE = 100000000 ~\newline
+ std::\+vector:\+ 0.\+270734 s ~\newline
+ \doxylink{class_vector}{Vector}:\+ 0.\+316023 s ~\newline
+
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md20}{}\doxysection{\texorpdfstring{5. Analizė}{5. Analizė}}\label{md__r_e_a_d_m_e_autotoc_md20}
+
+\begin{DoxyItemize}
+\item Mažiems dydžiams \doxylink{class_vector}{Vector} kartais greitesnis dėl paprastesnės implementacijos
+\item Dideliems dydžiams std::\+vector dažniausiai efektyvesnis
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md22}{}\doxysection{\texorpdfstring{6. Testuotos funkcijos}{6. Testuotos funkcijos}}\label{md__r_e_a_d_m_e_autotoc_md22}
+
+\begin{DoxyItemize}
+\item push\+\_\+back
+\item insert
+\item erase
+\item copy/\+move
+\item file read/\+write
+\item studentų apdorojimas
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md24}{}\doxysection{\texorpdfstring{7. Išvada}{7. Išvada}}\label{md__r_e_a_d_m_e_autotoc_md24}
+Sukurta \doxylink{class_vector}{Vector$<$\+T$>$} klasė:\+
+\begin{DoxyItemize}
+\item atitinka \texorpdfstring{$\sim$}{\string~}80–90\% std::\+vector funkcionalumo
+\item palaiko move semantics
+\item veikia su realiais duomenimis
+\item leidžia atlikti performance analizę
+\end{DoxyItemize}
+
+\DoxyHorRuler{0}
+\hypertarget{md__r_e_a_d_m_e_autotoc_md26}{}\doxysection{\texorpdfstring{8. Paleidimas}{8. Paleidimas}}\label{md__r_e_a_d_m_e_autotoc_md26}
+g++ \doxylink{main_8cpp}{main.\+cpp} \doxylink{funkcijos_8cpp}{funkcijos.\+cpp} -\/O2 -\/o app ./\+app 

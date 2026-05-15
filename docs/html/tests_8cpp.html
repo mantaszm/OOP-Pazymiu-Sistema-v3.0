@@ -1,0 +1,634 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="lt">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>OOP Pazymiu Sistema: tests.cpp Failo Nuoroda</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">OOP Pazymiu Sistema<span id="projectnumber">&#160;3.0</span>
+   </div>
+   <div id="projectbrief">Studentu pazymiu skaiciavimo sistema</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Sugeneruota Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', () => {
+  initMenu('',true);
+  init_search();
+});
+</script>
+<div id="main-nav-mobile">
+<div class="sm sm-dox"><input id="main-menu-state" type="checkbox"/>
+<label class="main-menu-btn" for="main-menu-state">
+<span class="main-menu-btn-icon"></span> Toggle main menu visibility</label>
+<span id="searchBoxPos1" style="position:absolute;right:8px;top:8px;height:36px;"></span>
+</div>
+</div><!-- main-nav-mobile -->
+<div id="main-nav">
+  <ul class="sm sm-dox" id="main-menu">
+    <li id="searchBoxPos2" style="float:right">
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Paieška" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+    </li>
+  </ul>
+</div><!-- main-nav -->
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('tests_8cpp.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">tests.cpp Failo Nuoroda</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="funkcijos_8h_source.html">funkcijos.h</a>&quot;</code><br />
+<code>#include &lt;cassert&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
+<code>#include &lt;type_traits&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Įtraukimo priklausomybių diagrama tests.cpp:</div>
+<div class="dyncontent">
+<div class="center"><img src="tests_8cpp__incl.png" border="0" usemap="#atests_8cpp" loading="lazy" alt=""/></div>
+<map name="atests_8cpp" id="atests_8cpp">
+<area shape="rect" title=" " alt="" coords="692,5,767,32"/>
+<area shape="rect" href="funkcijos_8h.html" title=" " alt="" coords="647,80,731,107"/>
+<area shape="poly" title=" " alt="" coords="724,31,705,68,702,64,720,34"/>
+<area shape="rect" title=" " alt="" coords="27,155,98,181"/>
+<area shape="poly" title=" " alt="" coords="689,26,556,50,386,83,237,119,114,154,112,149,236,114,385,77,555,44,694,25"/>
+<area shape="rect" title=" " alt="" coords="122,155,187,181"/>
+<area shape="poly" title=" " alt="" coords="691,32,203,157,201,152,691,27"/>
+<area shape="rect" title=" " alt="" coords="1317,155,1374,181"/>
+<area shape="poly" title=" " alt="" coords="736,30,762,69,781,89,802,104,845,120,902,130,1038,140,1182,144,1304,155,1298,155,1181,149,1038,145,901,135,844,125,800,109,777,93,758,72,734,35"/>
+<area shape="rect" title=" " alt="" coords="1399,155,1452,181"/>
+<area shape="poly" title=" " alt="" coords="745,30,797,73,846,104,923,129,990,141,1050,145,1108,143,1230,138,1301,141,1386,155,1380,154,1301,146,1230,143,1108,149,1050,150,989,146,921,134,844,109,794,77,743,35"/>
+<area shape="rect" title=" " alt="" coords="199,229,251,256"/>
+<area shape="poly" title=" " alt="" coords="689,22,540,30,439,38,333,51,230,68,137,91,63,120,36,137,17,156,8,176,14,191,30,204,55,215,120,230,186,239,181,240,119,235,54,220,27,209,9,194,3,175,12,153,33,133,61,115,135,85,229,62,332,45,439,33,540,25,694,20"/>
+<area shape="rect" title=" " alt="" coords="857,80,921,107"/>
+<area shape="poly" title=" " alt="" coords="757,30,850,73,845,73,757,35"/>
+<area shape="rect" title=" " alt="" coords="945,80,1028,107"/>
+<area shape="poly" title=" " alt="" coords="767,28,933,76,928,76,767,33"/>
+<area shape="rect" title=" " alt="" coords="301,229,376,256"/>
+<area shape="poly" title=" " alt="" coords="644,95,560,100,457,108,406,116,362,126,326,140,303,156,297,170,299,185,318,219,313,217,294,187,292,169,299,153,324,135,360,121,405,111,456,103,560,94,649,94"/>
+<area shape="rect" title=" " alt="" coords="495,155,555,181"/>
+<area shape="poly" title=" " alt="" coords="663,106,569,150,567,145,658,108"/>
+<area shape="rect" title=" " alt="" coords="580,155,646,181"/>
+<area shape="poly" title=" " alt="" coords="678,106,638,146,636,142,674,108"/>
+<area shape="poly" title=" " alt="" coords="644,98,422,117,271,133,114,157,113,152,270,128,422,111,649,96"/>
+<area shape="poly" title=" " alt="" coords="644,99,456,121,207,157,203,158,202,153,206,152,456,116,650,98"/>
+<area shape="poly" title=" " alt="" coords="732,101,751,104,904,120,1025,124,1147,131,1304,155,1298,155,1146,136,1025,129,903,125,750,109,732,106"/>
+<area shape="rect" title=" " alt="" coords="670,155,708,181"/>
+<area shape="poly" title=" " alt="" coords="691,105,691,141,687,137,687,109"/>
+<area shape="rect" title=" " alt="" coords="733,155,789,181"/>
+<area shape="poly" title=" " alt="" coords="703,105,741,144,736,143,701,110"/>
+<area shape="rect" title=" " alt="" coords="814,155,874,181"/>
+<area shape="poly" title=" " alt="" coords="717,105,806,148,801,148,716,110"/>
+<area shape="poly" title=" " alt="" coords="732,97,801,104,964,115,1092,119,1221,127,1386,155,1381,155,1220,133,1092,124,964,120,801,109,732,102"/>
+<area shape="rect" title=" " alt="" coords="949,155,1013,181"/>
+<area shape="poly" title=" " alt="" coords="732,102,937,155,931,155,731,108"/>
+<area shape="rect" title=" " alt="" coords="1038,155,1098,181"/>
+<area shape="poly" title=" " alt="" coords="731,100,751,104,886,126,1025,154,1020,154,885,131,750,109,731,106"/>
+<area shape="rect" title=" " alt="" coords="1122,155,1190,181"/>
+<area shape="poly" title=" " alt="" coords="731,101,751,104,850,118,928,126,1007,135,1109,154,1104,154,1006,140,927,131,849,123,750,109,731,106"/>
+<area shape="poly" title=" " alt="" coords="644,97,561,106,457,117,358,134,319,145,291,157,275,169,261,184,239,217,236,213,256,181,271,165,288,152,317,140,357,129,456,112,561,101,649,96"/>
+<area shape="rect" title=" " alt="" coords="412,229,476,256"/>
+<area shape="poly" title=" " alt="" coords="644,97,609,105,566,115,523,132,484,157,464,184,451,216,448,212,459,182,481,153,520,127,564,110,608,99,649,96"/>
+<area shape="rect" title=" " alt="" coords="681,229,777,256"/>
+<area shape="poly" title=" " alt="" coords="732,102,827,127,867,141,888,153,896,168,895,182,886,195,873,205,836,222,793,233,792,228,834,217,870,201,883,191,890,181,891,169,885,156,865,146,826,133,732,107"/>
+<area shape="rect" title=" " alt="" coords="1214,155,1292,181"/>
+<area shape="poly" title=" " alt="" coords="732,101,751,104,875,119,974,126,1073,134,1201,154,1196,154,1072,140,973,132,875,125,750,109,732,106"/>
+<area shape="rect" href="mano__vector_8h.html" title=" " alt="" coords="313,155,420,181"/>
+<area shape="poly" title=" " alt="" coords="644,105,436,154,435,149,649,104"/>
+<area shape="poly" title=" " alt="" coords="364,180,351,217,347,213,359,183"/>
+<area shape="poly" title=" " alt="" coords="345,181,264,224,262,219,339,182"/>
+<area shape="poly" title=" " alt="" coords="381,179,422,219,417,218,379,184"/>
+<area shape="poly" title=" " alt="" coords="421,177,669,228,663,229,421,183"/>
+</map>
+</div>
+</div>
+<p><a href="tests_8cpp_source.html">Eiti į šio failo programos kodą.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funkcijos</h2></td></tr>
+<tr class="memitem:a2dab8323c2ca1f85d6881283418bca62" id="r_a2dab8323c2ca1f85d6881283418bca62"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2dab8323c2ca1f85d6881283418bca62">testVectorPushBack</a> ()</td></tr>
+<tr class="memitem:ac45643abb0b4cf0d0c47e07c170f6cd1" id="r_ac45643abb0b4cf0d0c47e07c170f6cd1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ac45643abb0b4cf0d0c47e07c170f6cd1">testVectorPopBack</a> ()</td></tr>
+<tr class="memitem:a9cd0643f86ec4bf9bcb18a96afc61cb9" id="r_a9cd0643f86ec4bf9bcb18a96afc61cb9"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9cd0643f86ec4bf9bcb18a96afc61cb9">testVectorReserve</a> ()</td></tr>
+<tr class="memitem:aebdb065ae51fafdc8c68c163a7db060f" id="r_aebdb065ae51fafdc8c68c163a7db060f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aebdb065ae51fafdc8c68c163a7db060f">testVectorClear</a> ()</td></tr>
+<tr class="memitem:a7561a7dc8421219b46072a598a0d6f87" id="r_a7561a7dc8421219b46072a598a0d6f87"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7561a7dc8421219b46072a598a0d6f87">testVectorErase</a> ()</td></tr>
+<tr class="memitem:abcc1a28a581e093f9b76fde7f8fa7234" id="r_abcc1a28a581e093f9b76fde7f8fa7234"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#abcc1a28a581e093f9b76fde7f8fa7234">testVectorIterator</a> ()</td></tr>
+<tr class="memitem:a7bf4a6bcbad349107e441599277cdefc" id="r_a7bf4a6bcbad349107e441599277cdefc"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a7bf4a6bcbad349107e441599277cdefc">testVectorEmpty</a> ()</td></tr>
+<tr class="memitem:a46493ae233f624ba792fee802a22dc40" id="r_a46493ae233f624ba792fee802a22dc40"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a46493ae233f624ba792fee802a22dc40">testAbstractBaseClass</a> ()</td></tr>
+<tr class="memitem:abd434e3e9f175816c06db22f3fc05081" id="r_abd434e3e9f175816c06db22f3fc05081"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#abd434e3e9f175816c06db22f3fc05081">testDefaultConstructor</a> ()</td></tr>
+<tr class="memitem:a2121848465f1423427b3669594dcba1c" id="r_a2121848465f1423427b3669594dcba1c"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a2121848465f1423427b3669594dcba1c">testParameterizedConstructor</a> ()</td></tr>
+<tr class="memitem:afc8dc5f685cb2e1a4834f1c34eb82d86" id="r_afc8dc5f685cb2e1a4834f1c34eb82d86"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#afc8dc5f685cb2e1a4834f1c34eb82d86">testCopyConstructor</a> ()</td></tr>
+<tr class="memitem:a172ec11998887664db224d18a89d3fc3" id="r_a172ec11998887664db224d18a89d3fc3"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a172ec11998887664db224d18a89d3fc3">testCopyAssignment</a> ()</td></tr>
+<tr class="memitem:a45cdbdcd532267aa13f67d681e93dfb1" id="r_a45cdbdcd532267aa13f67d681e93dfb1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a45cdbdcd532267aa13f67d681e93dfb1">testSelfCopyAssignment</a> ()</td></tr>
+<tr class="memitem:a9bea171d43d4677c9a233e863a52c391" id="r_a9bea171d43d4677c9a233e863a52c391"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a9bea171d43d4677c9a233e863a52c391">testMoveConstructor</a> ()</td></tr>
+<tr class="memitem:a916c9897387a2109a39b19d914f1283a" id="r_a916c9897387a2109a39b19d914f1283a"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a916c9897387a2109a39b19d914f1283a">testMoveAssignment</a> ()</td></tr>
+<tr class="memitem:ae13a8d9339cf1fa7b643d9d9ee5741a1" id="r_ae13a8d9339cf1fa7b643d9d9ee5741a1"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae13a8d9339cf1fa7b643d9d9ee5741a1">testSelfMoveAssignment</a> ()</td></tr>
+<tr class="memitem:ae15faf94d7075fbc483be7046c189ab7" id="r_ae15faf94d7075fbc483be7046c189ab7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ae15faf94d7075fbc483be7046c189ab7">testDestructor</a> ()</td></tr>
+<tr class="memitem:a4f94b950842389f3cc659d8553a9d08f" id="r_a4f94b950842389f3cc659d8553a9d08f"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a4f94b950842389f3cc659d8553a9d08f">testGenerateFile</a> ()</td></tr>
+<tr class="memitem:aee5d5f13ac1fd6bbaca7251415d418fd" id="r_aee5d5f13ac1fd6bbaca7251415d418fd"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aee5d5f13ac1fd6bbaca7251415d418fd">testReadFile</a> ()</td></tr>
+<tr class="memitem:a6324af6ddc268dfdf78a90004cf088fe" id="r_a6324af6ddc268dfdf78a90004cf088fe"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a6324af6ddc268dfdf78a90004cf088fe">testReadFileWithoutSavingND</a> ()</td></tr>
+<tr class="memitem:a88b00615c6bdeeb01ec34765779f6e30" id="r_a88b00615c6bdeeb01ec34765779f6e30"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a88b00615c6bdeeb01ec34765779f6e30">testClass</a> ()</td></tr>
+</table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Funkcijos Dokumentacija</h2>
+<a id="a46493ae233f624ba792fee802a22dc40" name="a46493ae233f624ba792fee802a22dc40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46493ae233f624ba792fee802a22dc40">&#9670;&#160;</a></span>testAbstractBaseClass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testAbstractBaseClass </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="tests_8cpp_source.html">tests.cpp</a> eilutėje <a class="el" href="tests_8cpp_source.html#l00096">96</a>.</p>
+
+</div>
+</div>
+<a id="a88b00615c6bdeeb01ec34765779f6e30" name="a88b00615c6bdeeb01ec34765779f6e30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88b00615c6bdeeb01ec34765779f6e30">&#9670;&#160;</a></span>testClass()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testClass </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="tests_8cpp_source.html">tests.cpp</a> eilutėje <a class="el" href="tests_8cpp_source.html#l00300">300</a>.</p>
+
+</div>
+</div>
+<a id="a172ec11998887664db224d18a89d3fc3" name="a172ec11998887664db224d18a89d3fc3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a172ec11998887664db224d18a89d3fc3">&#9670;&#160;</a></span>testCopyAssignment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testCopyAssignment </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="tests_8cpp_source.html">tests.cpp</a> eilutėje <a class="el" href="tests_8cpp_source.html#l00145">145</a>.</p>
+
+</div>
+</div>
+<a id="afc8dc5f685cb2e1a4834f1c34eb82d86" name="afc8dc5f685cb2e1a4834f1c34eb82d86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc8dc5f685cb2e1a4834f1c34eb82d86">&#9670;&#160;</a></span>testCopyConstructor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testCopyConstructor </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="tests_8cpp_source.html">tests.cpp</a> eilutėje <a class="el" href="tests_8cpp_source.html#l00133">133</a>.</p>
+
+</div>
+</div>
+<a id="abd434e3e9f175816c06db22f3fc05081" name="abd434e3e9f175816c06db22f3fc05081"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd434e3e9f175816c06db22f3fc05081">&#9670;&#160;</a></span>testDefaultConstructor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testDefaultConstructor </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="tests_8cpp_source.html">tests.cpp</a> eilutėje <a class="el" href="tests_8cpp_source.html#l00108">108</a>.</p>
+
+</div>
+</div>
+<a id="ae15faf94d7075fbc483be7046c189ab7" name="ae15faf94d7075fbc483be7046c189ab7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae15faf94d7075fbc483be7046c189ab7">&#9670;&#160;</a></span>testDestructor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testDestructor </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="tests_8cpp_source.html">tests.cpp</a> eilutėje <a class="el" href="tests_8cpp_source.html#l00225">225</a>.</p>
+
+</div>
+</div>
+<a id="a4f94b950842389f3cc659d8553a9d08f" name="a4f94b950842389f3cc659d8553a9d08f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f94b950842389f3cc659d8553a9d08f">&#9670;&#160;</a></span>testGenerateFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testGenerateFile </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="tests_8cpp_source.html">tests.cpp</a> eilutėje <a class="el" href="tests_8cpp_source.html#l00234">234</a>.</p>
+
+</div>
+</div>
+<a id="a916c9897387a2109a39b19d914f1283a" name="a916c9897387a2109a39b19d914f1283a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a916c9897387a2109a39b19d914f1283a">&#9670;&#160;</a></span>testMoveAssignment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testMoveAssignment </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="tests_8cpp_source.html">tests.cpp</a> eilutėje <a class="el" href="tests_8cpp_source.html#l00191">191</a>.</p>
+
+</div>
+</div>
+<a id="a9bea171d43d4677c9a233e863a52c391" name="a9bea171d43d4677c9a233e863a52c391"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bea171d43d4677c9a233e863a52c391">&#9670;&#160;</a></span>testMoveConstructor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testMoveConstructor </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="tests_8cpp_source.html">tests.cpp</a> eilutėje <a class="el" href="tests_8cpp_source.html#l00172">172</a>.</p>
+
+</div>
+</div>
+<a id="a2121848465f1423427b3669594dcba1c" name="a2121848465f1423427b3669594dcba1c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2121848465f1423427b3669594dcba1c">&#9670;&#160;</a></span>testParameterizedConstructor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testParameterizedConstructor </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="tests_8cpp_source.html">tests.cpp</a> eilutėje <a class="el" href="tests_8cpp_source.html#l00119">119</a>.</p>
+
+</div>
+</div>
+<a id="aee5d5f13ac1fd6bbaca7251415d418fd" name="aee5d5f13ac1fd6bbaca7251415d418fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee5d5f13ac1fd6bbaca7251415d418fd">&#9670;&#160;</a></span>testReadFile()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testReadFile </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="tests_8cpp_source.html">tests.cpp</a> eilutėje <a class="el" href="tests_8cpp_source.html#l00253">253</a>.</p>
+
+</div>
+</div>
+<a id="a6324af6ddc268dfdf78a90004cf088fe" name="a6324af6ddc268dfdf78a90004cf088fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6324af6ddc268dfdf78a90004cf088fe">&#9670;&#160;</a></span>testReadFileWithoutSavingND()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testReadFileWithoutSavingND </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="tests_8cpp_source.html">tests.cpp</a> eilutėje <a class="el" href="tests_8cpp_source.html#l00283">283</a>.</p>
+
+</div>
+</div>
+<a id="a45cdbdcd532267aa13f67d681e93dfb1" name="a45cdbdcd532267aa13f67d681e93dfb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45cdbdcd532267aa13f67d681e93dfb1">&#9670;&#160;</a></span>testSelfCopyAssignment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testSelfCopyAssignment </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="tests_8cpp_source.html">tests.cpp</a> eilutėje <a class="el" href="tests_8cpp_source.html#l00159">159</a>.</p>
+
+</div>
+</div>
+<a id="ae13a8d9339cf1fa7b643d9d9ee5741a1" name="ae13a8d9339cf1fa7b643d9d9ee5741a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae13a8d9339cf1fa7b643d9d9ee5741a1">&#9670;&#160;</a></span>testSelfMoveAssignment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testSelfMoveAssignment </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="tests_8cpp_source.html">tests.cpp</a> eilutėje <a class="el" href="tests_8cpp_source.html#l00212">212</a>.</p>
+
+</div>
+</div>
+<a id="aebdb065ae51fafdc8c68c163a7db060f" name="aebdb065ae51fafdc8c68c163a7db060f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebdb065ae51fafdc8c68c163a7db060f">&#9670;&#160;</a></span>testVectorClear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testVectorClear </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="tests_8cpp_source.html">tests.cpp</a> eilutėje <a class="el" href="tests_8cpp_source.html#l00044">44</a>.</p>
+
+</div>
+</div>
+<a id="a7bf4a6bcbad349107e441599277cdefc" name="a7bf4a6bcbad349107e441599277cdefc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bf4a6bcbad349107e441599277cdefc">&#9670;&#160;</a></span>testVectorEmpty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testVectorEmpty </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="tests_8cpp_source.html">tests.cpp</a> eilutėje <a class="el" href="tests_8cpp_source.html#l00086">86</a>.</p>
+
+</div>
+</div>
+<a id="a7561a7dc8421219b46072a598a0d6f87" name="a7561a7dc8421219b46072a598a0d6f87"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7561a7dc8421219b46072a598a0d6f87">&#9670;&#160;</a></span>testVectorErase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testVectorErase </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="tests_8cpp_source.html">tests.cpp</a> eilutėje <a class="el" href="tests_8cpp_source.html#l00056">56</a>.</p>
+
+</div>
+</div>
+<a id="abcc1a28a581e093f9b76fde7f8fa7234" name="abcc1a28a581e093f9b76fde7f8fa7234"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcc1a28a581e093f9b76fde7f8fa7234">&#9670;&#160;</a></span>testVectorIterator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testVectorIterator </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="tests_8cpp_source.html">tests.cpp</a> eilutėje <a class="el" href="tests_8cpp_source.html#l00070">70</a>.</p>
+
+</div>
+</div>
+<a id="ac45643abb0b4cf0d0c47e07c170f6cd1" name="ac45643abb0b4cf0d0c47e07c170f6cd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac45643abb0b4cf0d0c47e07c170f6cd1">&#9670;&#160;</a></span>testVectorPopBack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testVectorPopBack </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="tests_8cpp_source.html">tests.cpp</a> eilutėje <a class="el" href="tests_8cpp_source.html#l00024">24</a>.</p>
+
+</div>
+</div>
+<a id="a2dab8323c2ca1f85d6881283418bca62" name="a2dab8323c2ca1f85d6881283418bca62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dab8323c2ca1f85d6881283418bca62">&#9670;&#160;</a></span>testVectorPushBack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testVectorPushBack </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="tests_8cpp_source.html">tests.cpp</a> eilutėje <a class="el" href="tests_8cpp_source.html#l00011">11</a>.</p>
+
+</div>
+</div>
+<a id="a9cd0643f86ec4bf9bcb18a96afc61cb9" name="a9cd0643f86ec4bf9bcb18a96afc61cb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cd0643f86ec4bf9bcb18a96afc61cb9">&#9670;&#160;</a></span>testVectorReserve()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void testVectorReserve </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Apibrėžimas failo <a class="el" href="tests_8cpp_source.html">tests.cpp</a> eilutėje <a class="el" href="tests_8cpp_source.html#l00036">36</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_1fe2e3f40887fbec9fd2493c34e7d145.html">vector</a></li><li class="navelem"><a href="tests_8cpp.html">tests.cpp</a></li>
+    <li class="footer">Sugeneruota <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>
